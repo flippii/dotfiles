@@ -1,0 +1,23 @@
+theme = Catppuccin Mocha
+
+window-height=40
+window-width=200
+window-padding-x = 24
+window-padding-y = 24
+window-decoration = true
+
+font-family = "MesloLGS Nerd Font Mono"
+font-size = 16
+
+macos-titlebar-style = "tabs"
+macos-option-as-alt = true
+
+keybind = shift+enter=text:\n
+# keybind = global:cmd+/=toggle_quick_terminal
+
+mouse-hide-while-typing = true
+
+background-blur-radius = 20
+# background-opacity = 0.7
+
+#window-decoration = false
