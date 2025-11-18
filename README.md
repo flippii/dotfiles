@@ -11,3 +11,12 @@ brew bundle dump --describe --file=~/Brewfile
 ```bash
 brew bundle --file=~/Brewfile
 ```
+
+## Link dot files
+
+```bash
+stow .
+stow -D .
+stow bat
+stow -D bat
+```
