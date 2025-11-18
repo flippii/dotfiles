@@ -1,0 +1,337 @@
+tap "atomicjar/tap"
+tap "catppuccin/tap"
+tap "derailed/k9s"
+tap "felixkratz/formulae"
+tap "gromgit/brewtils"
+tap "koekeishiya/formulae"
+tap "mvndaemon/mvnd"
+tap "nikitabobko/tap"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Multi-shell multi-command argument completer
+brew "carapace"
+# Statistics utility to count lines of code
+brew "cloc"
+# Tool for exploring each layer in a docker image
+brew "dive"
+# Simple command-line tool for creating clusters on Amazon EKS
+brew "eksctl"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Git extension for versioning large files
+brew "git-lfs"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Fast linters runner for Go
+brew "golangci-lint"
+# Kubernetes package manager
+brew "helm"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Configurable static site generator
+brew "hugo"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@76"
+# Interactive computing in Python
+brew "ipython"
+# Generate, develop and deploy Spring Boot + Angular/React applications
+brew "jhipster"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Modern load testing tool, using Go and JavaScript
+brew "k6"
+# Anti-bikeshedding Kotlin linter with built-in formatter
+brew "ktlint"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Utility for directing compilation
+brew "make"
+# Java-based project management
+brew "maven"
+# Scalable distributed version control system
+brew "mercurial"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Port scanning utility for large networks
+brew "nmap"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
+# AI coding agent, built for the terminal
+brew "opencode"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Python version management
+brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Python interface to gdbm
+brew "python-gdbm@3.11"
+# Python interface to Tcl/Tk
+brew "python-tk@3.11"
+# Rust toolchain installer
+brew "rustup"
+# Low-level access to audio, keyboard, mouse, joystick, and graphics
+brew "sdl2"
+# HTTP regression testing and benchmarking utility
+brew "siege"
+# Toolkit to help you get started with Spec-Driven Development
+brew "specify"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Tool to build, change, and version infrastructure
+brew "terraform"
+# HTTP/HTTPS proxy for POSIX systems
+brew "tinyproxy"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew "zellij"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Real-time type-ahead completion for Zsh
+brew "zsh-autocomplete"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# Soothing preview image generator for the high-spirited!
+brew "catppuccin/tap/catwalk"
+# Soothing port creation tool for the high-spirited!
+brew "catppuccin/tap/whiskers"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "derailed/k9s/k9s"
+# Interactive TUI for Homebrew
+brew "gromgit/brewtils/taproom"
+# Apache Maven Daemon
+brew "mvndaemon/mvnd/mvnd"
+# Compact TeX distribution as alternative to the full TeX Live / MacTeX
+cask "basictex"
+# Web browser focusing on privacy
+cask "brave-browser"
+# E-books management software
+cask "calibre"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+# AI-powered translator
+cask "deepl"
+# Online diagram software
+cask "drawio"
+cask "font-hack-nerd-font"
+# Kubernetes IDE
+cask "freelens"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty", args: { appdir: "~/Applications" }
+# Free and open-source image editor
+cask "gimp"
+# Desktop client for GitHub repositories
+cask "github"
+# Git client focusing on productivity
+cask "gitkraken"
+# Keyboard customiser
+cask "karabiner-elements"
+# File archiver
+cask "keka"
+# GUI replacement for the Java command-line utilities keytool and jarsigner
+cask "keystore-explorer"
+# Free cross-platform office suite, fresh version
+cask "libreoffice"
+# Collection of alternate languages for LibreOffice
+cask "libreoffice-language-pack"
+# Discover, download, and run local LLMs
+cask "lm-studio"
+# File system integration
+cask "macfuse"
+# Extensible two-pane file manager
+cask "marta"
+# Interactive tool for analyzing MongoDB data
+cask "mongodb-compass"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Utility to uninstall apps and remove leftover files from old/uninstalled apps
+cask "pearcleaner"
+# Offline Music Player
+cask "petrichor"
+# Administration and development platform for PostgreSQL
+cask "pgadmin4"
+# Collaboration platform for API development
+cask "postman"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
+# Video game digital distribution service
+cask "steam"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# Web browser focusing on security
+cask "tor-browser"
+# Virtualiser for arm64 hardware
+cask "virtualbox"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
+# Network protocol analyzer
+cask "wireshark-app"
+# REST, GraphQL and gRPC client
+cask "yaak"
+# Multiplayer code editor
+cask "zed@preview"
+vscode "4ops.terraform"
+vscode "akamud.vscode-theme-onedark"
+vscode "akamud.vscode-theme-onelight"
+vscode "alanruizmondragon.jupyter-dark-theme"
+vscode "alefragnani.project-manager"
+vscode "amazonwebservices.aws-toolkit-vscode"
+vscode "atommaterial.a-file-icon-vscode"
+vscode "batisteo.vscode-django"
+vscode "be5invis.theme-verdandi"
+vscode "be5invis.vscode-icontheme-nomo-dark"
+vscode "brenix.hacker-theme"
+vscode "budparr.language-hugo-vscode"
+vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
+vscode "catppuccin.catppuccin-vsc-pack"
+vscode "chadalen.vscode-jetbrains-icon-theme"
+vscode "codezombiech.gitignore"
+vscode "compassak.intellij-idea-new-ui"
+vscode "cstrap.python-snippets"
+vscode "dannysteenman.aws-terraform-extension-pack"
+vscode "dannysteenman.iam-actions-snippets"
+vscode "dannysteenman.iam-service-principal-snippets"
+vscode "davidanson.vscode-markdownlint"
+vscode "davidbwaters.macos-modern-theme"
+vscode "dbcode.dbcode"
+vscode "developersoapbox.vscode-springboot-snippets"
+vscode "donjayamanne.githistory"
+vscode "donjayamanne.python-environment-manager"
+vscode "donjayamanne.python-extension-pack"
+vscode "dotjoshjohnson.xml"
+vscode "dracula-theme.theme-dracula"
+vscode "editorconfig.editorconfig"
+vscode "emroussel.atom-icons"
+vscode "esafirm.kotlin-formatter"
+vscode "esbenp.prettier-vscode"
+vscode "felipe-mendes.slack-theme"
+vscode "field.hugo-pack"
+vscode "fisheva.eva-theme"
+vscode "formulahendry.code-runner"
+vscode "fwcd.kotlin"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.github-vscode-theme"
+vscode "github.remotehub"
+vscode "github.vscode-github-actions"
+vscode "github.vscode-pull-request-github"
+vscode "hashicorp.terraform"
+vscode "hasiburr.dark-hacker-theme-by-hasibur-r"
+vscode "hbenl.vscode-test-explorer"
+vscode "hbenl.vscode-test-explorer-liveshare"
+vscode "hediet.vscode-drawio"
+vscode "helgardrichard.helium-icon-theme"
+vscode "icao.electron-vue"
+vscode "jamesmaj.easy-icons"
+vscode "jebbs.markdown-extended"
+vscode "jeppeandersen.vscode-kafka"
+vscode "johnpapa.vscode-peacock"
+vscode "jonathanharty.gruvbox-material-icon-theme"
+vscode "kaellarkin.hugo-shortcode-syntax"
+vscode "kaih2o.python-resource-monitor"
+vscode "kevinrose.vsc-python-indent"
+vscode "littlefoxteam.vscode-python-test-adapter"
+vscode "lucafalasco.matcha"
+vscode "lucafalasco.matchalk"
+vscode "luisfalconmx.vscode-theme-vue-pro"
+vscode "maghsk.matcha-plus"
+vscode "markis.code-coverage"
+vscode "marnix.peacock"
+vscode "mathematic.vscode-pdf"
+vscode "mathiasfrohlich.kotlin"
+vscode "me-dutour-mathieu.vscode-github-actions"
+vscode "mhutchie.git-graph"
+vscode "miguelsolorio.symbols"
+vscode "mindaro-dev.file-downloader"
+vscode "mintlify.document"
+vscode "mrmlnc.vscode-duplicate"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-ceintl.vscode-language-pack-de"
+vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-powertoys"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode.remote-repositories"
+vscode "ms-vscode.test-adapter-converter"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "njpwerner.autodocstring"
+vscode "njqdev.vscode-python-typehint"
+vscode "oderwat.indent-rainbow"
+vscode "pkief.material-icon-theme"
+vscode "pkief.material-product-icons"
+vscode "redhat.java"
+vscode "redhat.vscode-xml"
+vscode "redhat.vscode-yaml"
+vscode "rogalmic.bash-debug"
+vscode "sallar.vscode-duotone-dark"
+vscode "sam-the-programmer.jupyter-theme"
+vscode "sldobri.bunker"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "streetsidesoftware.code-spell-checker-german"
+vscode "tal7aouy.icons"
+vscode "tamasfe.even-better-toml"
+vscode "teabyii.ayu"
+vscode "thenikso.github-plus-theme"
+vscode "tintinweb.vscode-solidity-language"
+vscode "tomphilbin.gruvbox-themes"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vmware.vscode-boot-dev-pack"
+vscode "vmware.vscode-spring-boot"
+vscode "vscjava.vscode-gradle"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-lombok"
+vscode "vscjava.vscode-maven"
+vscode "vscjava.vscode-spring-boot-dashboard"
+vscode "vscjava.vscode-spring-initializr"
+vscode "wesbos.theme-cobalt2"
+vscode "yile-ou.paddy-color-theme"
+vscode "yonyonder.vue-light-theme"
+go "github.com/go-delve/delve/cmd/dlv"
+go "github.com/766b/go-outliner"
+go "gocat"
+go "beispiel.de/goconc"
+go "golang.org/x/tools/cmd/godoc"
+go "gomd5"
+go "golang.org/x/tools/gopls"
+go "gourl"
+go "honnef.co/go/tools/cmd/staticcheck"
