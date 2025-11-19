@@ -15,10 +15,6 @@ _darcs
 .gitignore
 .gitmodules
 
-reactangle
-vscode
-brew
-
 .+~          # emacs backup files
 #.*#       # emacs autosave files
 
