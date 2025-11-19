@@ -4,8 +4,8 @@ return {
 	adjust_window_size_when_changing_font_size = false,
 	color_scheme = 'Catppuccin Mocha',
 	enable_tab_bar = true,
-  initial_rows = 60,
-  initial_cols = 200,
+	initial_rows = 60,
+	initial_cols = 200,
 	font_size = 15.0,
 	font = wezterm.font('JetBrains Mono'),
 	-- macos_window_background_blur = 40,
@@ -22,7 +22,7 @@ return {
 	-- window_background_opacity = 0.78,
 	-- window_background_opacity = 0.20,
 	window_decorations = 'RESIZE',
-  window_close_confirmation = 'NeverPrompt',
+	window_close_confirmation = 'NeverPrompt',
 
 	keys = {
 		{
@@ -38,11 +38,11 @@ return {
 	},
 
 	mouse_bindings = {
-	  -- Ctrl-click will open the link under the mouse cursor
-	  {
-	    event = { Up = { streak = 1, button = 'Left' } },
-	    mods = 'CTRL',
-	    action = wezterm.action.OpenLinkAtMouseCursor,
-	  },
+		-- Ctrl-click will open the link under the mouse cursor
+		{
+			event = { Up = { streak = 1, button = 'Left' } },
+			mods = 'CTRL',
+			action = wezterm.action.OpenLinkAtMouseCursor,
+		},
 	},
 }
