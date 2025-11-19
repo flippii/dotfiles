@@ -53,6 +53,9 @@ alias ls.tree="eza --header --group --tree --level=2  --git --long --icons"
 alias ll="eza --header --group --long  --icons --all"
 alias ll.tree="eza --header --group --tree --level=2  --git --long --icons --all"
 
+# lazygit config folder
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Nmap
 alias nm="nmap -sC -sV -oN nmap"
 
@@ -126,4 +129,3 @@ alias cd="z"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/badmonkey/.lmstudio/bin"
 # End of LM Studio CLI section
-

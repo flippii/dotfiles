@@ -24,3 +24,9 @@ cd ~/dotfiles
 stow bat
 stow -D bat
 ```
+
+## Change lazygit config folder
+
+```bash
+export XDG_CONFIG_HOME="$HOME/.config"
+```
