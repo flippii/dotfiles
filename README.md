@@ -19,9 +19,21 @@ brew bundle --file=~/Brewfile
 
 ## Link dot files
 
+Clone github repository and switch in folder:
+
 ```bash
 cd ~/dotfiles
+```
+
+To link for example bat configuration:
+
+```bash
 stow bat
+```
+
+To unlink for example bat configuration:
+
+```bash
 stow -D bat
 ```
 
