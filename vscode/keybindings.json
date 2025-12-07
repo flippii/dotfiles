@@ -1,5 +1,100 @@
-// Geben Sie Ihre Tastenzuordnungen in dieser Datei ein, um die Standardwerte außer Kraft zu setzen.
+// Place your key bindings in this file to override the defaults
 [
+    // NAVIGATION
+    {
+        "key":     "ctrl+shift+t",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key":     "ctrl+shift+t",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when":    "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    // FILE TREE
+    {
+        "command": "workbench.action.toggleSidebarVisibility",
+        "key": "ctrl+shift+e"
+    },
+    {
+        "command": "workbench.files.action.focusFilesExplorer",
+        "key": "ctrl+shift+e",
+        "when": "editorTextFocus"
+    },
+    {
+        "key":     "ctrl+shift+t",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when":    "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "command": "renameFile",
+        "key": "r",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "workbench.action.newWindow",
+        "when": "!explorerViewletFocus"
+    },
+    {
+        "command": "deleteFile",
+        "key": "d",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    // EXTRA
+    {
+        "key": "ctrl+shift+5",
+        // jump between matching tags in HTML files
+        "command": "editor.emmet.action.matchTag"
+    },
+    {
+        "key": "shift+cmd+z",
+        "command": "workbench.action.toggleZenMode"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusNextGroup",
+        "when": "!terminalFocus"
+    },
+    // FULLSCREEN TOGGLE
     {
         "key": "shift+cmd+v",
         "command": "workbench.action.toggleFullScreen",

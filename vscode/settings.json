@@ -1,154 +1,98 @@
 {
-    "workbench.colorTheme": "IntelliJ IDEA New UI Light",
-    "workbench.externalBrowser": "chrome",
-    "git.openRepositoryInParentFolders": "always",
-    "files.autoSave": "afterDelay",
-    "redhat.telemetry.enabled": false,
-    "vs-kubernetes": {
-        "vscode-kubernetes.helm-path-mac": "/Users/badmonkey/.vs-kubernetes/tools/helm/darwin-arm64/helm",
-        "vscode-kubernetes.minikube-path-mac": "/Users/badmonkey/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
-    },
-    "go.toolsManagement.autoUpdate": true,
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 15,
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.externalBrowser": "chrome",
+    "workbench.colorTheme": "IntelliJ IDEA New UI Light",
+    "workbench.preferredLightColorTheme": "IntelliJ IDEA New UI Light",
+    "workbench.preferredDarkColorTheme": "IntelliJ IDEA New UI Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.productIconTheme": "material-product-icons",
+    "workbench.statusBar.visible": true,
+    "window.autoDetectColorScheme": true,
+    "window.clickThroughInactive": false,
+    "window.newWindowProfile": "Standard",
+    "window.zoomLevel": 0,
+    "breadcrumbs.enabled": false,
+    "editor.formatOnSave": true,
+    "editor.suggest.insertMode": "replace",
     "editor.fontSize": 13,
     "editor.tabSize": 4,
     "editor.minimap.enabled": false,
     "editor.guides.bracketPairs": "active",
     "editor.guides.bracketPairsHorizontal": "active",
+    "editor.linkedEditing": true,
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDelete": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "terminal.integrated.fontFamily": "'Hack Nerd Font'",
     "terminal.integrated.fontSize": 12,
     "update.showReleaseNotes": false,
-    "go.goroot": "/Users/badmonkey/.gvm/gos/go1.24.5",
-    "debug.javascript.defaultRuntimeExecutable": {
-        "pwa-node": "node"
-    },
-    "database-client.autoSync": true,
-    "pgsql.serverGroups": [
-        {
-            "name": "Servers",
-            "id": "91CCEF54-4839-4A76-BB09-88E7A8E81F54",
-            "isDefault": true
-        }
-    ],
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "workbench.editor.autoLockGroups": {
-        "mainThreadWebview-markdown.preview": true
-    },
-    "docker.extension.enableComposeLanguageServer": false,
-    "pgsql.connections": [
-        {
-            "id": "101AA7D3-DEE7-4B81-B37E-442C1762AA67",
-            "groupId": "91CCEF54-4839-4A76-BB09-88E7A8E81F54",
-            "authenticationType": "SqlLogin",
-            "connectTimeout": 15,
-            "applicationName": "vscode-pgsql",
-            "clientEncoding": "utf8",
-            "sslmode": "prefer",
-            "savePassword": true,
-            "server": "127.0.0.1",
-            "user": "postgresql",
-            "password": "",
-            "database": "urlist",
-            "sshPassword": "",
-            "profileName": "127.0.0.1, urlist (postgresql)",
-            "expiresOn": 0
-        }
-    ],
-    "github.copilot.chat.agent.thinkingTool": true,
-    "chat.todoListTool.enabled": true,
-    "github.copilot.chat.newWorkspace.useContext7": true,
-    "notebook.lineNumbers": "on",
-    "workbench.preferredDarkColorTheme": "IntelliJ IDEA New UI Dark",
-    "window.clickThroughInactive": false,
-    "settingsSync.ignoredExtensions": [
+    "zenMode.hideLineNumbers": false,
 
-    ],
-    "workbench.colorCustomizations": {},
-    "explorer.confirmDelete": false,
-    "projectManager.git.baseFolders": [
-        ""
-    ],
-    "window.newWindowProfile": "Standard",
-    "focusMicroservice.viewMode": "local",
-    "dashyeah.title": "Projects",
-    "dashyeah.debug": false,
-    "dashyeah.database": [
+    "vim.leader": "<Space>",
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // NAVIGATION
+        // switch b/w buffers
+        { "before": ["<S-h>"], "commands": [":bprevious"] },
+        { "before": ["<S-l>"], "commands": [":bnext"] },
+
+        // splits
+        { "before": ["leader", "v"], "commands": [":vsplit"] },
+        { "before": ["leader", "s"], "commands": [":split"] },
+
+        // panes
         {
-            "id": "9ce6580b-4ad1-43f8-baaa-efe92e6185be",
-            "name": "Test",
-            "path": "file:///Users/badmonkey/work/jupyter-by-example",
-            "icon": "codicon-folder",
-            "accent": "#dc143c"
-        }
-    ],
-    "dashyeah.folderSizing": "col-12",
-    "dashyeah.columnSizing": "col-12 col-md-6",
-    "dashyeah.showPaths": true,
-    "dashyeah.fontSize": "font-size-normal",
-    "dashyeah.rounded": true,
-    "dashyeah.openOnNewWindow": true,
-    "dashyeah.openInNewWindow": false,
-    "workbench.preferredLightColorTheme": "IntelliJ IDEA New UI Light",
-    "projectManager.groupList": true,
-    "git.autofetch": true,
-    "workbench.iconTheme": "material-icon-theme",
-    "helium-icon-theme.showWelcomeMessage": false,
-    "aws.telemetry": false,
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": false,
-        "scminput": false,
-        "sql": true,
-        "markdown": true
-    },
-    "dbcode.connections": [
-        {
-            "connectionId": "4_9iqdbToKoMM6Yz5OB5b",
-            "name": "urlist",
-            "driver": "postgres",
-            "color": "#BD0014",
-            "connectionType": "host",
-            "host": "127.0.0.1",
-            "port": 5432,
-            "ssl": false,
-            "username": "urlist",
-            "password": "",
-            "savePassword": "secretStorage",
-            "database": "urlist",
-            "readOnly": false,
-            "role": "development",
-            "connectionTimeout": 30
+            "before": ["leader", "h"],
+            "commands": ["workbench.action.focusLeftGroup"]
         },
         {
-            "connectionId": "ndW1-v3PmPV7W0u9EiRI7",
-            "name": "bank",
-            "driver": "mysql",
-            "color": "#009670",
-            "connectionType": "host",
-            "host": "127.0.0.1",
-            "port": 3306,
-            "ssl": false,
-            "username": "root",
-            "password": "",
-            "savePassword": "secretStorage",
-            "database": "BankDB",
-            "readOnly": false,
-            "connectionTimeout": 30,
-            "driverOptions": {
-                "retrievePublickey": true
-            }
+            "before": ["leader", "j"],
+            "commands": ["workbench.action.focusBelowGroup"]
+        },
+        {
+            "before": ["leader", "k"],
+            "commands": ["workbench.action.focusAboveGroup"]
+        },
+        {
+            "before": ["leader", "l"],
+            "commands": ["workbench.action.focusRightGroup"]
+        },
+        // NICE TO HAVE
+        { "before": ["leader", "w"], "commands": [":w!"] },
+        { "before": ["leader", "q"], "commands": [":q!"] },
+        { "before": ["leader", "x"], "commands": [":x!"] },
+        {
+            "before": ["[", "d"],
+            "commands": ["editor.action.marker.prev"]
+        },
+        {
+            "before": ["]", "d"],
+            "commands": ["editor.action.marker.next"]
+        },
+        {
+            "before": ["<leader>", "c", "a"],
+            "commands": ["editor.action.quickFix"]
+        },
+        { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+        { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+        {
+            "before": ["g", "h"],
+            "commands": ["editor.action.showDefinitionPreviewHover"]
         }
     ],
-    "dbcode.resultLocation": "panel",
-    "workbench.productIconTheme": "material-product-icons",
-    "window.autoDetectColorScheme": true,
-    "terraform.languageServer.enable": true,
-    "terraform.codelens.referenceCount": true,
-    "github.copilot.advanced": {
-
-    },
-    "terminal.integrated.fontFamily": "'Hack Nerd Font'"
+    "vim.visualModeKeyBindings": [
+        // Stay in visual mode while indenting
+        { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+        { "before": [">"], "commands": ["editor.action.indentLines"] },
+        // Move selected lines while staying in visual mode
+        { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+        { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+        // toggle comment selection
+        { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+    ]
 }
