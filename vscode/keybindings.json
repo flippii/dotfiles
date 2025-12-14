@@ -34,18 +34,21 @@
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.terminal.split"
+    },
     // FILE TREE
     {
         "command": "workbench.action.toggleSidebarVisibility",
-        "key": "ctrl+shift+e"
+        "key": "ctrl+shift+h"
     },
     {
         "command": "workbench.files.action.focusFilesExplorer",
-        "key": "ctrl+shift+e",
-        "when": "editorTextFocus"
+        "key": "shift+cmd+e"
     },
     {
-        "key":     "ctrl+shift+t",
+        "key":     "shift+cmd+e",
         "command": "workbench.action.focusActiveEditorGroup",
         "when":    "filesExplorerFocus && !inputFocus"
     },
@@ -69,16 +72,7 @@
         "key": "d",
         "when": "filesExplorerFocus && !inputFocus"
     },
-    // EXTRA
-    {
-        "key": "ctrl+shift+5",
-        // jump between matching tags in HTML files
-        "command": "editor.emmet.action.matchTag"
-    },
-    {
-        "key": "shift+cmd+z",
-        "command": "workbench.action.toggleZenMode"
-    },
+    // EDITOR
     {
         "key": "ctrl+h",
         "command": "workbench.action.focusPreviousGroup",
@@ -89,15 +83,46 @@
         "command": "workbench.action.focusNextGroup",
         "when": "!terminalFocus"
     },
+    // EXTRA
+    {
+        "key": "ctrl+shift+5",
+        // jump between matching tags in HTML files
+        "command": "editor.emmet.action.matchTag"
+    },
+    {
+        "key": "shift+cmd+z",
+        "command": "workbench.action.toggleZenMode"
+    },
     // FULLSCREEN TOGGLE
     {
         "key": "shift+cmd+v",
         "command": "workbench.action.toggleFullScreen",
         "when": "!isIOS"
     },
+    // GIT COPILOT CHAT
     {
-        "key": "ctrl+cmd+f",
-        "command": "-workbench.action.toggleFullScreen",
-        "when": "!isIOS"
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "workbench.panel.chat.view.copilot.focus",
+        "when": "!view.workbench.panel.chat.view.copilot.visible || editorFocus"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "view.workbench.panel.chat.view.copilot.visible && !editorFocus"
+    },
+    // SEARCH
+    {
+        "key": "shift+cmd+f",
+        "command": "workbench.view.search",
+        "when": "!workbench.view.search.active || editorFocus"
+    },
+    {
+        "key": "shift+cmd+f",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "workbench.view.search.active && !editorFocus"
     }
 ]
