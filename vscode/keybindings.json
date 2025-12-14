@@ -2,13 +2,13 @@
 [
     // NAVIGATION
     {
-        "key":     "ctrl+shift+t",
+        "key": "ctrl+shift+t",
         "command": "workbench.action.terminal.focus"
     },
     {
-        "key":     "ctrl+shift+t",
+        "key": "ctrl+shift+t",
         "command": "workbench.action.focusActiveEditorGroup",
-        "when":    "terminalFocus"
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+a",
@@ -36,7 +36,8 @@
     },
     {
         "key": "ctrl+shift+s",
-        "command": "workbench.action.terminal.split"
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
     },
     // FILE TREE
     {
