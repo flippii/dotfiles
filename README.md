@@ -42,3 +42,7 @@ stow -D bat
 ```bash
 export XDG_CONFIG_HOME="$HOME/.config"
 ```
+
+## MAC keyboard layout
+
+Use [US keyboard layout](https://hci.rwth-aachen.de/usgermankeyboard) with german special characters (ä,ö,ü,ß).
