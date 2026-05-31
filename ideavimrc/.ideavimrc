@@ -248,7 +248,7 @@ nnoremap <C-p> :action JumpToLastWindow<CR>
 nnoremap <C-x> :action HideAllWindows<CR>
 
 nnoremap <Leader>wt :action ActivateTerminalToolWindow<CR>
-nnoremap <Leader>wd :action ActivateDatabaseToolWindow<CR>
+nnoremap <Leader>wa :action ActivateDatabaseToolWindow<CR>
 nnoremap <Leader>wb :action ActivateBuildToolWindow<CR>
 nnoremap <Leader>wp :action ActivateProjectToolWindow<CR>
 nnoremap <Leader>wd :action ActivateDebugToolWindow<CR>
@@ -258,7 +258,7 @@ nnoremap <Leader>wc :action ActivateCommitToolWindow<CR>
 nnoremap <Leader>wv :action ActivateVersionControlToolWindow<CR>
 let g:WhichKeyDesc_windows = "<Leader>w Tool Windows"
 let g:WhichKeyDesc_windows_terminal= "<Leader>wt Terminal Window"
-let g:WhichKeyDesc_windows_database= "<Leader>wd Database Window"
+let g:WhichKeyDesc_windows_database= "<Leader>wa Database Window"
 let g:WhichKeyDesc_windows_build = "<Leader>wb Build Tool"
 let g:WhichKeyDesc_windows_project = "<Leader>wp Project Window"
 let g:WhichKeyDesc_windows_debug = "<Leader>wd Debug Window"
