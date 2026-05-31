@@ -1,22 +1,18 @@
-// settings.json, generated at Tue Apr 07 2026 10:06:53 GMT+0800 (Singapore Standard Time)
 // Zed settings
 //
 // For information on how to configure Zed, see the Zed
 // documentation: https://zed.dev/docs/configuring-zed
 //
 // To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+// Move all panel to the right
 {
-	"agent_buffer_font_size": 14.0,
-	"agent_ui_font_size": 16.0,
+	"cli_default_open_behavior": "existing_window",
 	"edit_predictions": {
 		"provider": "zed",
 	},
 	"agent_servers": {
-		"factory-droid": {
-			"type": "registry",
-		},
 		"github-copilot": {
 			"type": "registry",
 		},
@@ -24,62 +20,67 @@
 			"type": "registry",
 		},
 	},
+	"agent_ui_font_size": 16.0,
+	"agent_buffer_font_size": 14.0,
+	"context_servers": {
+		"mcp-server-context7": {
+   "enabled": true,
+			"settings": {
+				"context7_api_key": "ctx7sk-553a5119-7201-464c-b482-463422847b10",
+			},
+		},
+	},
 	"session": {
 		"trust_all_worktrees": true,
-	},
-	"git": {
-		"inline_blame": {
-			"enabled": true,
-		},
 	},
 	"status_bar": {
 		"experimental.show": true,
 	},
+	"cursor_shape": "bar",
+	"cursor_blink": true,
+	"use_system_window_tabs": true,
 	"gutter": {
 		"line_numbers": true,
 	},
-	"cursor_shape": "bar",
-	"cursor_blink": false,
-	"use_system_window_tabs": true,
-	"buffer_font_fallbacks": [
-		"Hack Nerd Font Mono",
-		"Menlo",
-		"Monaco",
-		"Courier New",
-	],
 	"show_whitespaces": "all",
 	"show_edit_predictions": true,
 	"hard_tabs": true,
+	"autosave": "on_focus_change",
+	"ui_font_family": "Hack Nerd Font Mono",
 	"git_panel": {
+		"sort_by_path": true,
 		"tree_view": true,
-		"dock": "left",
+		"dock": "right",
 	},
 	"icon_theme": {
 		"mode": "dark",
 		"light": "Catppuccin Mocha",
 		"dark": "Catppuccin Mocha",
 	},
+	// Edit prediction provider (moved from deprecated features.edit_prediction_provider)
 	"base_keymap": "VSCode",
 	"theme": {
 		"mode": "dark",
 		"light": "Catppuccin Latte",
 		"dark": "Catppuccin Macchiato",
 	},
-	"ui_font_size": 16.0,
+	"ui_font_size": 16,
 	"buffer_font_size": 14.0,
-	// Finder model width
-	"file_finder": {
-		"modal_max_width": "medium",
-	},
 	// NOTE: Change the font family to your preference
 	"buffer_font_family": "Hack Nerd Font Mono",
 	// Vim mode settings
 	"vim_mode": true,
-	"vim": {},
+	"vim": {
+		"use_system_clipboard": "on_yank",
+		"use_smartcase_find": true,
+		"toggle_relative_line_numbers": true,
+		"highlight_on_yank_duration": 1000,
+	},
 	"which_key": {
+		"delay_ms": 500,
 		"enabled": true,
 	},
-	// use relative line numbers
+	// use relative line numbers (fallback, vim.toggle_relative_line_numbers handles this dynamically)
 	"relative_line_numbers": "enabled",
 	"tab_bar": {
 		"show": true,
@@ -101,64 +102,126 @@
 		"left_padding": 0.15,
 		"right_padding": 0.15,
 	},
-	// Uncomment below to use local AI with Ollama, refer https://zed.dev/docs/language-model-integration?highlight=ollama#using-ollama-on-macos
 	"agent": {
-		"default_profile": "ask",
-		"default_model": {
-			"provider": "copilot_chat",
-			"model": "gpt-4o",
+		"dock": "left",
+		"tool_permissions": {
+			"tools": {
+				"terminal": {
+					"always_allow": [
+						{
+							"pattern": "^find\\s+\\~/\\.config/zed(\\s|$)",
+						},
+						{
+							"pattern": "^cat\\s+\\~/\\.config/zed/settings\\.json(\\s|$)",
+						},
+					],
+				},
+				"fetch": {
+					"default": "allow",
+				},
+			},
 		},
-		"provider": null,
+		"default_view": "text_thread",
+		"play_sound_when_agent_done": "always",
+		"single_file_review": false,
+		"expand_edit_card": true,
+		"expand_terminal_card": true,
+		"enable_feedback": true,
+		"profiles": {
+			"write": {
+				"name": "Write",
+				"tools": {
+					"search_web": true,
+					"open": true,
+					"create_directory": true,
+					"terminal": true,
+					"batch_tool": true,
+					"code_actions": true,
+					"code_symbols": true,
+					"contents": true,
+					"copy_path": true,
+					"create_file": true,
+					"delete_path": true,
+					"diagnostics": true,
+					"edit_file": true,
+					"fetch": true,
+					"list_directory": true,
+					"move_path": true,
+					"now": true,
+					"find_path": true,
+					"read_file": true,
+					"grep": true,
+					"rename": true,
+					"symbol_info": true,
+					"thinking": true,
+				},
+				"enable_all_context_servers": true,
+				"context_servers": {},
+			},
+		},
+		"default_profile": "write",
+		"default_model": {
+			"effort": "xhigh",
+			"enable_thinking": true,
+			"provider": "zed.dev",
+			"model": "gpt-5.5",
+		},
+		"inline_assistant_model": {
+			"provider": "zed.dev",
+			"model": "claude-sonnet-4-thinking",
+		},
+		"commit_message_model": {
+			"provider": "zed.dev",
+			"model": "claude-sonnet-4-thinking",
+		},
 	},
+	// To use Ollama, configure language_models.ollama below and set agent.default_model
+	// Refer: https://zed.dev/docs/ai/llm-providers
 	"language_models": {
+		"opencode": {
+			"show_go_models": false,
+			"show_zen_models": false,
+		},
 		"ollama": {
 			"api_url": "http://localhost:11434",
+			"auto_discover": true,
+		},
+	},
+	// Diagnostics settings
+	"diagnostics": {
+		"include_warnings": true,
+	},
+	// Git inline blame
+	"git": {
+		"inline_blame": {
+			"enabled": true,
 		},
 	},
 	// Inlay hints preconfigured by Zed: Go, Rust, Typescript and Svelte
 	"inlay_hints": {
-		"enabled": true,
+		"enabled": false,
 	},
 	// LSP
 	"lsp": {
-		"tailwindcss-language-server": {
+		"basedpyright": {
 			"settings": {
-				"classAttributes": ["class", "className", "ngClass", "styles"],
+				"python": {
+					"pythonPath": ".venv/bin/python",
+				},
+			},
+		},
+		"ruff": {
+			"initialization_options": {
+				"settings": {
+					"configuration": "ruff.toml",
+				},
 			},
 		},
 	},
 	"languages": {
-		// Refer https://zed.dev/docs/languages/javascript and https://zed.dev/docs/languages/typescript for more info
-		"TypeScript": {
-			// Refer https://github.com/jellydn/ts-inlay-hints for how to setup for Neovim and VSCode
-			"show_whitespaces": "all",
-			"show_edit_predictions": true,
-			"hard_tabs": true,
-			"inlay_hints": {
-				"enabled": true,
-				"show_parameter_hints": false,
-				"show_other_hints": true,
-				"show_type_hints": true,
-			},
-		},
 		"Python": {
-			"show_whitespaces": "all",
-			"show_edit_predictions": true,
-			"hard_tabs": true,
-			"format_on_save": "on",
-			"formatter": {
-				"language_server": {
-					"name": "ruff",
-				},
-			},
-			"language_servers": [
-				"ty",
-				"ruff",
-				"!basedpyright",
-				"!pyrefly",
-				"!pyright",
-				"!pylsp",
-			],
+			"formatter": "language_server",
+			"language_servers": ["pyright", "ruff"],
 		},
 	},
 	// Use zed commit editor
@@ -200,20 +263,24 @@
 	],
 	// Turn off telemetry
 	"telemetry": {
-		"diagnostics": true,
+		"diagnostics": false,
 		"metrics": false,
 	},
 	// Move all panel to the right
 	"project_panel": {
 		"auto_fold_dirs": false,
 		"button": true,
-		"dock": "right",
+		"dock": "left",
 		"git_status": true,
 	},
 	"outline_panel": {
 		"dock": "right",
 	},
 	"collaboration_panel": {
+		"dock": "right",
+	},
+	// Move some unnecessary panels to the left
+	"notification_panel": {
 		"dock": "left",
 	},
 }

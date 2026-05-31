@@ -1,17 +1,18 @@
-" Keys on Nuphy Keyboard
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Keys on Nuphy Keyboard (MAC)
 "   S - Shift
 "   C - CTRL
 "   A - OPT
 "   M - Cmd
 "
-" Navigate Tabs Vim bindings
+" Navigate Tabs Vim bindings:
 "   gt, go to next tab
 "   gT, go to the previous tab
 "   1gt, go to the first tab
 "   2gt, go to the second tab
 "   3gt, ....
 "
-" Plugin Commentary
+" Plugin Commentary:
 "   gc{motion}     Comment or uncomment lines that {motion} moves over.
 "   gcc            Comment or uncomment [count] lines.
 "   {Visual}gc     Comment or uncomment the highlighted lines.
@@ -19,11 +20,18 @@
 "   gcgc           Uncomment the current and adjacent commented lines.
 "   gcu
 "
-" IntelliJ Code Completion
+" IntelliJ Code Completion:
 "   Shortcut: Shift + Opt + Space
 "   Configuration: Settings | Editor | General | Code Completion | Show suggestions as you type | Popup
+" 
+" IntelliJ Shortcuts:
+"    Ctrl-TAB                           -     Switcher
+"    Cmd-1                              -     Focus Project Explorer
+"    <space> focus Project Explorer     -     show File Preview
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set scrolloff=5
+set history=1000
 
 " Plugins
 set surround
@@ -34,20 +42,25 @@ set commentary
 set highlightedyank
 
 " which-key: increase the timeoutlen (default: 1000), don't add space around the equal sign
-set timeoutlen = 5000
+set notimeout
 
+let g:WhichKey_FontSize = 15
+let g:WhichKey_PrefixColor = "#f5a97f"
+let g:WhichKey_CommandColor = "#7dc4e4"
+let g:WhichKey_PrefixStyle = "bold"
+let g:WhichKey_KeyStyle = "italic"
+let g:WhichKey_SortOrder = "by_key_prefix_first"
+let g:WhichKey_ShowTypedSequence = "true"
 let g:WhichKey_ShowVimActions = "true"
 
 let g:WhichKeyDesc_easymotion = "<leader><leader> EasyMotion"
 
 " highlightedyank: highlight yanked text for 2000ms (default: 500)
 let g:highlightedyank_highlight_duration = "2000"
-
-let g:highlightedyank_highlight_color = "rgba(191, 191, 191, 100)"
+let g:highlightedyank_highlight_color = "rgba(147, 154, 183, 100)"
 
 " leader key
 let mapleader = ' '
-
 let g:WhichKeyDesc_leader = "<leader> Leader Key"
 
 " sync Vim clipboard with OS clipboard
@@ -59,204 +72,221 @@ set matchpairs+=<:>
 " smart line joining
 set ideajoin
 
+let g:WhichKeyDesc_vim_config = "<leader>c Vim Configuration"
 " open config
 noremap <leader>cc :edit ~/.ideavimrc<cr>
-
-let g:WhichKeyDesc_edit_vim_config = "<leader>cc Edit VIM Configuration File"
-
+let g:WhichKeyDesc_vim_config_edit = "<leader>cc Edit Vim Configuration File"
 " source config
 noremap <leader>cs :source ~/.ideavimrc<cr>:nohlsearch<cr>
-
-let g:WhichKeyDesc_reload_vim_config = "<leader>cs Reload VIM Configuration File"
+let g:WhichKeyDesc_vim_config_reload = "<leader>cs Reload Vim Configuration File"
 
 set hlsearch
-
 " remove search highlights
 nnoremap <Esc> :nohlsearch<cr>
-
 " case-insensitive search
 set ignorecase
-
 " enable case-sensitive search when uppercased letter is present
 set smartcase
-
 " search while typing
 set incsearch
 
+""" Distraction Free Mode
+nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
+map <leader>Dz <action>(ToggleZenMode)
+map <leader>Df <action>(ToggleFullScreen)
+let g:WhichKeyDesc_display = "<Leader>D Display options"
+let g:WhichKeyDesc_zen_mode = "<Leader>Dz Toggle Zen mode"
+let g:WhichKeyDesc_fullscreen = "<Leader>Df Toggle full screen"
+
+""" Terminal
+nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
+
+""" Navigation
+
+nnoremap <C-\> :action SplitVertically<CR>
+nnoremap <C--> :action SplitHorizontally<CR>
+nnoremap <C-=> :action Unsplit<CR>
+nnoremap <C-m> :action MoveEditorToOppositeTabGroup<CR>
+
+sethandler <C-j> a:vim
+sethandler <C-k> a:vim
+
 " go to the left split
-map <A-h> <C-w>h
-
+nnoremap <C-h> <C-w>h
 " go to the bottom split
-map <A-k> <C-w>j
-
+nnoremap <C-k> <C-w>j
 " go to the top split
-map <A-j> <C-w>k
-
+nnoremap <C-j> <C-w>k
 " go to the right split
-map <A-l> <C-w>l
+nnoremap <C-l> <C-w>l
 
 " switch to next tab
-map <S-l> gt
-
+nnoremap <TAB> gt
 " switch to previous tab
-map <S-h> gT
+nnoremap <S-TAB> gT
 
-map <leader>wv <Action>(SplitVertically)
-map <leader>wh <Action>(SplitHorizontally)
-map <leader>ww <Action>(Unsplit)
-map <leader>wa <Action>(UnsplitAll)
+nnoremap <Leader>en :action EditSourceInNewWindow<CR>
+nnoremap <Leader>n :action NextWindow<CR>
+let g:WhichKeyDesc_editor = "<Leader>e Editor"
+let g:WhichKeyDesc_editor_new_window = "<Leader>en Open in new Window"
+let g:WhichKeyDesc_next_window = "<Leader>n Next Window"
 
-let g:WhichKeyDesc_split = "<leader>w Split Window"
-let g:WhichKeyDesc_split_vertically = "<leader>wv Split Vertically"
-let g:WhichKeyDesc_split_horizontally = "<leader>wh Split Horizontally"
-let g:WhichKeyDesc_windows_split = "<leader>ww Unsplit"
-let g:WhichKeyDesc_windows = "<leader>wa Unsplit all"
+nnoremap <Leader>qc :action CloseContent<CR>
+nnoremap <Leader>qa :action CloseAllEditors<CR>
+let g:WhichKeyDesc_tabs = "<Leader>q Tabs"
+let g:WhichKeyDesc_tabs_close_current = "<Leader>qc Close Current Tab"
+let g:WhichKeyDesc_tabs_close_all = "<Leader>qa Close All Tabs"
 
-map <leader>sc <Action>(GotoClass)
-map <leader>sf <Action>(GotoFile)
-map <leader>ss <Action>(GotoSymbol)
-map <leader>sa <Action>(GotoAction)
-map <leader>gd <Action>(GotoDeclaration)
-map <leader>gy <Action>(GotoTypeDeclaration)
-map <leader>gi <Action>(GotoImplementation)
-map <leader>gt <Action>(GotoTest)
-map <leader>gm <Action>(GotoSuperMethod)
-map <leader>gl <Action>(GotoLine)
+""" Editor source code
 
-let g:WhichKeyDesc_goto_artefacts = "<leader>s Artefacts"
-let g:WhichKeyDesc_goto_class = "<leader>sc Goto Class"
-let g:WhichKeyDesc_goto_file = "<leader>sf Goto File"
-let g:WhichKeyDesc_goto_symbol = "<leader>ss Goto Symbol"
-let g:WhichKeyDesc_goto_action = "<leader>sa Goto Action"
-let g:WhichKeyDesc_goto_sources = "<leader>g Goto Sources"
-let g:WhichKeyDesc_goto_declaration = "<leader>gd Goto Declaration"
-let g:WhichKeyDesc_goto_type_declaration = "<leader>gy Goto Type-Declaration"
-let g:WhichKeyDesc_goto_implementation = "<leader>gi Goto Implementation"
-let g:WhichKeyDesc_goto_test = "<leader>gt Goto Test"
-let g:WhichKeyDesc_goto_super_method = "<leader>gm Goto Super-Method"
-let g:WhichKeyDesc_goto_line = "<leader>gl Goto Line"
+vnoremap < <gv
+vnoremap > >gv
 
-map <leader>ug <Action>(FindUsages)
-map <leader>uu <Action>(ShowUsages)
-map <leader>vs <Action>(ViewSource)
-map <leader>qi <Action>(QuickImplementations)
-map <leader>qt <Action>(QuickTypeDefinition)
-map <leader>ti <Action>(ExpressionTypeInfo)
-map <leader>sh <Action>(ShowHoverInfo)
-map <leader>oo <Action>(FileStructurePopup)
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
 
-let g:WhichKeyDesc_usages = "<leader>u Find Usages"
-let g:WhichKeyDesc_find_usages = "<leader>ug Find Usages"
-let g:WhichKeyDesc_show_usages = "<leader>uu Show Usages"
-let g:WhichKeyDesc_view = "<leader>v View"
-let g:WhichKeyDesc_view_source = "<leader>vs View Source"
-let g:WhichKeyDesc_find_usages = "<leader>qi Quick Implementation"
-let g:WhichKeyDesc_show_usages = "<leader>gt Quick Type Definition"
-let g:WhichKeyDesc_types = "<leader>t Types"
-let g:WhichKeyDesc_expression_type_info = "<leader>ti Expression Type Info"
-let g:WhichKeyDesc_show_hover_info = "<leader>sh Show Hover Info"
-let g:WhichKeyDesc_file_structure = "<leader>o File Structure"
-let g:WhichKeyDesc_file_structure_popup = "<leader>oo File Structure Popup"
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <Leader>zc :action CollapseAllRegions<CR>
+nnoremap <Leader>zo :action ExpandAllRegions<CR>
+let g:WhichKeyDesc_regions = "<Leader>z Regions"
+let g:WhichKeyDesc_regions_collapse_all = "<Leader>zc Collapse All Regions"
+let g:WhichKeyDesc_regions_expand_all = "<Leader>zo Expand All Regions"
 
-map <M-f> <Action>(Find)
-map <M-r> <Action>(Replace)
-map <leader>ff <Action>(FindInPath)
-map <leader>fr <Action>(ReplaceInPath)
+nnoremap <Leader>ln :action RenameElement<CR>
+nnoremap <Leader>lm :action ExtractMethod<CR>
+nnoremap <Leader>lv :action IntroduceVariable<CR>
+nnoremap <Leader>lf :action IntroduceField<CR>
+nnoremap <Leader>ls :action ChangeSignature<CR>
+nnoremap <Leader>lr :action Refactorings.QuickListPopupAction<CR>
+let g:WhichKeyDesc_language = "<Leader>l Language"
+let g:WhichKeyDesc_language_rename = "<Leader>ln Rename Element"
+let g:WhichKeyDesc_language_extract = "<Leader>lm Extract Method"
+let g:WhichKeyDesc_language_variable = "<Leader>lv Introduce Variable"
+let g:WhichKeyDesc_language_field = "<Leader>lf Introduce Field"
+let g:WhichKeyDesc_language_change_signature = "<Leader>ls Change Signature"
+let g:WhichKeyDesc_language_quick_list_popup = "<Leader>lr Quick List Popup"
 
-let g:WhichKeyDesc_find  = "<leader>f Find/Replace"
-let g:WhichKeyDesc_find_in_path = "<leader>ff Find in Path"
-let g:WhichKeyDesc_replace_in_path = "<leader>fr Replace in Path"
+nnoremap <Leader>= :action ReformatCode<CR>
+nnoremap <Leader>o :action OptimizeImports<CR>
+let g:WhichKeyDesc_reformat_code = "<Leader>= Reformat Code"
+let g:WhichKeyDesc_organize_imports = "<Leader>o Organize Imports"
 
-map <leader>rn <Action>(RenameElement)
-map <leader>rm <Action>(ExtractMethod)
-map <leader>rv <Action>(IntroduceVariable)
-map <leader>rf <Action>(IntroduceField)
-map <leader>rs <Action>(ChangeSignature)
-map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+sethandler <C-r> a:vim
 
-let g:WhichKeyDesc_refactoring = "<leader>r Code"
-let g:WhichKeyDesc_refactoring_rename = "<leader>rn Rename Element"
-let g:WhichKeyDesc_refactoring_extract = "<leader>rm Extract Method"
-let g:WhichKeyDesc_refactoring_variable = "<leader>rv Introduce Variable"
-let g:WhichKeyDesc_refactoring_field = "<leader>rf Introduce Field"
-let g:WhichKeyDesc_change_signature = "<leader>rs Change Signature"
-let g:WhichKeyDesc_quick_list_popup = "<leader>rr Quick List Popup"
+nnoremap <C-r> :action RecentFiles<CR>
+nnoremap <Leader>r :action RecentLocations<CR>
+nnoremap <Leader>h :action LocalHistory.ShowHistory<CR>
+let g:WhichKeyDesc_recent_locations = "<Leader>r Recent Locations"
+let g:WhichKeyDesc_show_local_history = "<Leader>h Show Local History"
 
-map <leader>aa <Action>(ShowIntentionActions)
-map <leader>sw <Action>(SurroundWith)
-map <S-space> <Action>(Generate)
-map <S-d> <Action>(EditorDuplicateLines)
+nnoremap <Leader>ge :action GotoNextError<CR>
+nnoremap <Leader>gE :action GotoPreviousError<CR>
+let g:WhichKeyDesc_goto = "<Leader>g Goto"
+let g:WhichKeyDesc_goto_next = "<Leader>ge Goto Next Error"
+let g:WhichKeyDesc_goto_previous = "<Leader>gE Goto Previous Error"
 
 imap <A-space> <Action>(CodeCompletion)
 
-map <leader>en <Action>(GotoNextError)
-map <leader>ep <Action>(GotoPreviousError)
-map <leader>lc <Action>(JumpToLastChange)
-map <leader>ll <Action>(RecentLocations)
-map <C-o> <Action>(RecentFiles)
-map <S-j> <Action>(MethodUp)
-map <S-k> <Action>(MethodDown)
+""" Searching and Source Code Navigation
 
-let g:WhichKeyDesc_error  = "<leader>e Error"
-let g:WhichKeyDesc_goto_next_error = "<leader>en Goto Next Error"
-let g:WhichKeyDesc_goto_previous_error = "<leader>ep Goto Previous Error"
-let g:WhichKeyDesc_navigation = "<leader>l Navigation"
-let g:WhichKeyDesc_jump_to_last_change = "<leader>lc Jump to Last Change"
-let g:WhichKeyDesc_recent_locations = "<leader>ll Recent Locations"
+sethandler <M-/> a:vim
 
-map <leader>rc <Action>(ReformatCode)
-map <leader>oi <Action>(OptimizeImports)
-map <leader>ra <Action>(RearrangeCode)
+nnoremap <M-/> :action FindInPath<CR>
+nnoremap <M-a> :action GotoAction<CR>
+nnoremap <M-f> :action GotoFile<CR>
 
-let g:WhichKeyDesc_reformat_code  = "<leader>rc Reformat Code"
-let g:WhichKeyDesc_optimize_imports = "<leader>oi Optimize Imports"
-let g:WhichKeyDesc_rearrange_code = "<leader>ra Rearrange Code"
+nnoremap <Leader>s :action GotoRelated<CR>
+nnoremap <Leader>y :action CallHierarchy<CR>
+nnoremap <Leader>u :action FindUsages<CR>
+let g:WhichKeyDesc_goto_related = "<Leader>s Goto Related"
+let g:WhichKeyDesc_call_hierarchy = "<Leader>y Call Hierarchy"
+let g:WhichKeyDesc_find_usages = "<Leader>u Find Usages"
 
-map <A-,> <Action>(MoveLineUp)
-map <A-.> <Action>(MoveLineDown)
-map <C-,> <Action>(MoveStatementDown)
-map <C-.> <Action>(MoveStatementUp)
-map <leader>ca <Action>(CopyAbsolutePath)
-map <leader>cn <Action>(CopyFileName)
-map <leader>cp <Action>(CopyContentRootPath)
+nnoremap <M-s> :action FileStructurePopup<CR>
 
-let g:WhichKeyDesc_files  = "<leader>c Files"
-let g:WhichKeyDesc_copy_absolute_path = "<leader>ca Copy Absolute Path"
-let g:WhichKeyDesc_copy_file_name = "<leader>cn Copy Filename"
-let g:WhichKeyDesc_copy_content_root_path = "<leader>cp Copy Content Root Path"
+nnoremap <Leader>gc :action GotoClass<CR>
+nnoremap <Leader>gd :action GotoDeclaration<CR>
+nnoremap <Leader>gD :action GotoTypeDeclaration<CR>
+nnoremap <Leader>gi :action GotoImplementation<CR>
+nnoremap <Leader>gt :action GotoTest<CR>
+nnoremap <Leader>gm :action GotoSuperMethod<CR>
+nnoremap <Leader>gs :action GotoSymbol<CR>
+let g:WhichKeyDesc_goto_class = "<Leader>gc Goto Class"
+let g:WhichKeyDesc_goto_declaration = "<Leader>gd Goto Declaration"
+let g:WhichKeyDesc_goto_type_declaration = "<Leader>gD Goto Type-Declaration"
+let g:WhichKeyDesc_goto_implementation = "<Leader>gi Goto Implementation"
+let g:WhichKeyDesc_goto_test = "<Leader>gt Goto Test"
+let g:WhichKeyDesc_goto_super_method = "<Leader>gm Goto Super-Method"
+let g:WhichKeyDesc_goto_symbol = "<Leader>gs Goto Symbol"
 
-map <leader>qq <Action>(CloseContent)
-map <leader>qa <Action>(CloseAllEditors)
-map <leader>ir <Action>(RestartIde)
+nnoremap <Leader>iu :action ShowUsages<CR>
+nnoremap <leader>iU :action ShowUmlDiagram<CR>
+nnoremap <Leader>ie :action ShowErrorDescription<CR>
+nnoremap <Leader>ii :action QuickImplementations<CR>
+nnoremap <Leader>it :action QuickTypeDefinition<CR>
+nnoremap <Leader>ie :action ExpressionTypeInfo<CR>
+nnoremap <leader>ip :action ParameterInfo<CR>
+nnoremap <leader>ij :action QuickJavaDoc<CR>
+nnoremap <leader>im :action MethodHierarchy<CR>
+let g:WhichKeyDesc_info = "<Leader>i Information"
+let g:WhichKeyDesc_info_usages = "<Leader>iu Show Usages"
+let g:WhichKeyDesc_info_uml_diagram = "<Leader>iU UML Diagram"
+let g:WhichKeyDesc_info_error_description = "<Leader>ie Show Error Description"
+let g:WhichKeyDesc_info_quick_implementations = "<Leader>ii Quick Implementations"
+let g:WhichKeyDesc_info_quick_type_definitions = "<Leader>it Quick Type Definitions"
+let g:WhichKeyDesc_info_expressions_type_info = "<Leader>ie Expressions Type Info"
+let g:WhichKeyDesc_info_parameter = "<Leader>ip Parameter Info"
+let g:WhichKeyDesc_info_javadoc = "<Leader>ij Java Doc"
+let g:WhichKeyDesc_info_method_hierarchy = "<Leader>im Method Hierarchy"
 
-let g:WhichKeyDesc_close  = "<leader>q Close/Informationen"
-let g:WhichKeyDesc_close_content  = "<leader>qq Close Content"
-let g:WhichKeyDesc_close_all_editors  = "<leader>qa Close all Editors"
-let g:WhichKeyDesc_ide  = "<leader>i IDE"
-let g:WhichKeyDesc_ide_restart  = "<leader>ir Restart IDE"
+""" Tool Windows
 
-map <leader>er <Action>(Run)
-map <leader>ed <action>(Debug)
-map <leader>el <Action>(Rerun)
-map <leader>ea <Action>(RunClass)
-map <leader>es <Action>(Stop)
-map <leader>ec <Action>(ChooseRunConfiguration)
+sethandler <C-p> a:vim
 
-let g:WhichKeyDesc_execute = "<leader>e Execute"
-let g:WhichKeyDesc_execute_run = "<leader>er Run"
-let g:WhichKeyDesc_execute_debug = "<leader>ed Debug"
-let g:WhichKeyDesc_execute_rerun = "<leader>el Rerun"
-let g:WhichKeyDesc_execute_run_class = "<leader>ea Run Class"
-let g:WhichKeyDesc_execute_stop  = "<leader>es Stop"
-let g:WhichKeyDesc_execute_choose = "<leader>ec Choose Run Configuration"
+nnoremap <C-p> :action JumpToLastWindow<CR>
+nnoremap <C-x> :action HideAllWindows<CR>
 
-map <leader>dc <action>(ContextDebug)
-map <leader>dr <action>(Resume)
-map <leader>dx <action>(EvaluateExpression)
-map <leader>dt <action>(RunToCursor)
+nnoremap <Leader>wt :action ActivateTerminalToolWindow<CR>
+nnoremap <Leader>wd :action ActivateDatabaseToolWindow<CR>
+nnoremap <Leader>wb :action ActivateBuildToolWindow<CR>
+nnoremap <Leader>wp :action ActivateProjectToolWindow<CR>
+nnoremap <Leader>wd :action ActivateDebugToolWindow<CR>
+nnoremap <Leader>we :action ActivateRunToolWindow<CR>
+nnoremap <Leader>ws :action ActivateStructureToolWindow<CR>
+let g:WhichKeyDesc_windows = "<Leader>w Tool Windows"
+let g:WhichKeyDesc_windows_terminal= "<Leader>wt Terminal Window"
+let g:WhichKeyDesc_windows_database= "<Leader>wd Database Window"
+let g:WhichKeyDesc_windows_build = "<Leader>wb Build Tool"
+let g:WhichKeyDesc_windows_project = "<Leader>wp Project Window"
+let g:WhichKeyDesc_windows_debug = "<Leader>wd Debug Window"
+let g:WhichKeyDesc_windows_run = "<Leader>we Run Window"
+let g:WhichKeyDesc_windows_structure = "<Leader>ws Structure Window"
 
-let g:WhichKeyDesc_debug = "<leader>d Debug"
-let g:WhichKeyDesc_debug_context = "<leader>dc Debug Context"
-let g:WhichKeyDesc_debug_resume = "<leader>dr Resume"
-let g:WhichKeyDesc_evaluate_expression = "<leader>dx Evaluate Expression"
-let g:WhichKeyDesc_run_to_cursor = "<leader>dt Run to Cursor"
+""" Running and Debugging
+
+nnoremap <Leader>em :action RunMenu<CR>
+nnoremap <Leader>en :action RunClass<CR>
+nnoremap <Leader>ec :action ContextRun<CR>
+nnoremap <Leader>er :action Rerun<CR>
+nnoremap <leader>et :action RunTests<CR>
+nnoremap <leader>ef :action RerunFailedTests<CR>
+nnoremap <leader>es :action Stop<CR>
+nnoremap <Leader>eC :action ChooseRunConfiguration<CR>
+let g:WhichKeyDesc_run = "<Leader>e Run"
+let g:WhichKeyDesc_run_menu = "<Leader>em Run Menu"
+let g:WhichKeyDesc_run_class = "<Leader>en Run Class"
+let g:WhichKeyDesc_run_context = "<Leader>ec Context Run"
+let g:WhichKeyDesc_run_rerun = "<Leader>er Rerun"
+let g:WhichKeyDesc_run_tests = "<Leader>et Run Tests"
+let g:WhichKeyDesc_run_failed = "<Leader>ef Rerun Failed Tests"
+let g:WhichKeyDesc_run_stop = "<Leader>es Stop"
+let g:WhichKeyDesc_run_choose_configuration = "<Leader>eC Choose Run Configuration"
+
+nnoremap <leader>dd :action Debug<CR>
+nnoremap <Leader>dc :action ContextDebug<CR>
+nnoremap <Leader>dt :action ActivateDebugToolWindow<CR>
+let g:WhichKeyDesc_debug = "<Leader>d Debug"
+let g:WhichKeyDesc_debug_execute = "<leader>dd Execute Debug"
+let g:WhichKeyDesc_debug_context = "<leader>dc Context Debug"
+let g:WhichKeyDesc_debug_activate_tool_window = "<leader>dt Activate Debug Tool Window"
