@@ -254,6 +254,8 @@ nnoremap <Leader>wp :action ActivateProjectToolWindow<CR>
 nnoremap <Leader>wd :action ActivateDebugToolWindow<CR>
 nnoremap <Leader>we :action ActivateRunToolWindow<CR>
 nnoremap <Leader>ws :action ActivateStructureToolWindow<CR>
+nnoremap <Leader>wc :action ActivateCommitToolWindow<CR>
+nnoremap <Leader>wv :action ActivateVersionControlToolWindow<CR>
 let g:WhichKeyDesc_windows = "<Leader>w Tool Windows"
 let g:WhichKeyDesc_windows_terminal= "<Leader>wt Terminal Window"
 let g:WhichKeyDesc_windows_database= "<Leader>wd Database Window"
@@ -262,6 +264,8 @@ let g:WhichKeyDesc_windows_project = "<Leader>wp Project Window"
 let g:WhichKeyDesc_windows_debug = "<Leader>wd Debug Window"
 let g:WhichKeyDesc_windows_run = "<Leader>we Run Window"
 let g:WhichKeyDesc_windows_structure = "<Leader>ws Structure Window"
+let g:WhichKeyDesc_windows_commit = "<Leader>wc Commit Window"
+let g:WhichKeyDesc_windows_version_control = "<Leader>wv Version Control Window"
 
 """ Running and Debugging
 
