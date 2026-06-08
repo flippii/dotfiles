@@ -28,6 +28,8 @@
 "    Ctrl-TAB                           -     Switcher
 "    Cmd-1                              -     Focus Project Explorer
 "    <space> focus Project Explorer     -     show File Preview
+"    Cmd-f
+"    Cmd-r
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set scrolloff=5
@@ -98,9 +100,6 @@ let g:WhichKeyDesc_display = "<Leader>D Display options"
 let g:WhichKeyDesc_zen_mode = "<Leader>Dz Toggle Zen mode"
 let g:WhichKeyDesc_fullscreen = "<Leader>Df Toggle full screen"
 
-""" Terminal
-nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
-
 """ Navigation
 
 nnoremap <C-\> :action SplitVertically<CR>
@@ -144,6 +143,12 @@ vnoremap > >gv
 
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
+
+nnoremap <A-j> :action MoveLineUp<CR>
+nnoremap <A-k> :action MoveLineDown<CR>
+
+nnoremap <A-S-j> :action MoveStatementDown<CR>
+nnoremap <A-S-k> :action MoveStatementUp<CR>
 
 nnoremap zc :action CollapseRegion<CR>
 nnoremap zo :action ExpandRegion<CR>
@@ -193,7 +198,6 @@ imap <A-space> <Action>(CodeCompletion)
 sethandler <M-/> a:vim
 
 nnoremap <M-/> :action FindInPath<CR>
-nnoremap <M-a> :action GotoAction<CR>
 nnoremap <M-f> :action GotoFile<CR>
 
 nnoremap <Leader>s :action GotoRelated<CR>
@@ -212,6 +216,7 @@ nnoremap <Leader>gi :action GotoImplementation<CR>
 nnoremap <Leader>gt :action GotoTest<CR>
 nnoremap <Leader>gm :action GotoSuperMethod<CR>
 nnoremap <Leader>gs :action GotoSymbol<CR>
+nnoremap <Leader>ga :action GotoAction<CR>
 let g:WhichKeyDesc_goto_class = "<Leader>gc Goto Class"
 let g:WhichKeyDesc_goto_declaration = "<Leader>gd Goto Declaration"
 let g:WhichKeyDesc_goto_type_declaration = "<Leader>gD Goto Type-Declaration"
@@ -219,6 +224,7 @@ let g:WhichKeyDesc_goto_implementation = "<Leader>gi Goto Implementation"
 let g:WhichKeyDesc_goto_test = "<Leader>gt Goto Test"
 let g:WhichKeyDesc_goto_super_method = "<Leader>gm Goto Super-Method"
 let g:WhichKeyDesc_goto_symbol = "<Leader>gs Goto Symbol"
+let g:WhichKeyDesc_goto_actions = "<Leader>ga Goto Actions"
 
 nnoremap <Leader>iu :action ShowUsages<CR>
 nnoremap <leader>iU :action ShowUmlDiagram<CR>
@@ -246,8 +252,8 @@ sethandler <C-p> a:vim
 
 nnoremap <C-p> :action JumpToLastWindow<CR>
 nnoremap <C-x> :action HideAllWindows<CR>
+nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
 
-nnoremap <Leader>wt :action ActivateTerminalToolWindow<CR>
 nnoremap <Leader>wa :action ActivateDatabaseToolWindow<CR>
 nnoremap <Leader>wb :action ActivateBuildToolWindow<CR>
 nnoremap <Leader>wp :action ActivateProjectToolWindow<CR>
@@ -257,7 +263,6 @@ nnoremap <Leader>ws :action ActivateStructureToolWindow<CR>
 nnoremap <Leader>wc :action ActivateCommitToolWindow<CR>
 nnoremap <Leader>wv :action ActivateVersionControlToolWindow<CR>
 let g:WhichKeyDesc_windows = "<Leader>w Tool Windows"
-let g:WhichKeyDesc_windows_terminal= "<Leader>wt Terminal Window"
 let g:WhichKeyDesc_windows_database= "<Leader>wa Database Window"
 let g:WhichKeyDesc_windows_build = "<Leader>wb Build Tool"
 let g:WhichKeyDesc_windows_project = "<Leader>wp Project Window"
