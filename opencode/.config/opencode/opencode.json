@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "model": "google/gemma-4-12b-qat",
   "provider": {
     "lmstudio": {
       "npm": "@ai-sdk/openai-compatible",
@@ -20,5 +21,10 @@
         }
       }
     }
-  }
+  },
+  "instructions": [
+    "docs/",
+    "README.md",
+    "Claude.md"
+  ]
 }
