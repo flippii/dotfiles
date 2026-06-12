@@ -27,9 +27,9 @@
 " IntelliJ Shortcuts:
 "    Ctrl-TAB                           -     Switcher
 "    Cmd-1                              -     Focus Project Explorer
-"    <space> focus Project Explorer     -     show File Preview
-"    Cmd-f
-"    Cmd-r
+"    <space> focus Project Explorer     -     Show File Preview
+"    Cmd-f                              -     Find in File
+"    Cmd-r                              -     Find and Replace in File
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set scrolloff=5
