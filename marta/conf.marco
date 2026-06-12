@@ -1,0 +1,29 @@
+environment {
+    textEditor "Sublime Text"
+}
+
+behavior {
+    theme "Classic"
+    
+    table {
+        iconSize 18
+        verticalPadding 3
+    }
+}
+
+etty {
+    fonts {
+        normal [ "MesloLGS Nerd Font Mono" 15 ]
+    }
+}
+
+fonts {
+    actionBar [ "Default" 15 ]
+    breadcrumbs [ "Default" 15 ]
+    virtualTabs [ "Default Bold" 15 ]
+    files [ "Default" 15 ]
+    statusBar [ "Default Light" 14 ]
+    tableHeader [ "Default" 14 ]
+    tabs [ "Default" 15 ]
+    preferences [ "MesloLGS Nerd Font Mono" 15 ]
+}
