@@ -1,0 +1,26 @@
+{
+  "lastChangelogVersion": "0.79.3",
+  "defaultProvider": "opencode",
+  "defaultModel": "deepseek-v4-flash-free",
+  "packages": [
+    "npm:pi-web-access",
+    "npm:@gotgenes/pi-permission-system",
+    "npm:pi-codex-goal"
+  ],
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "treeFilterMode": "default",
+  "theme": "dark",
+  "defaultThinkingLevel": "high",
+  "hideThinkingBlock": false,
+  "enableSkillCommands": true,
+  "enabledModels": [
+    "big-pickle",
+    "mimo-v2.5-free",
+    "north-mini-code-free",
+    "nemotron-3-ultra-free",
+    "deepseek-v4-flash-free",
+    "google/gemma-4-12b-qat"
+  ]
+}
