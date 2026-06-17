@@ -1,11 +1,13 @@
 {
-  "lastChangelogVersion": "0.79.3",
+  "lastChangelogVersion": "0.79.6",
   "defaultProvider": "opencode",
-  "defaultModel": "deepseek-v4-flash-free",
+  "defaultModel": "big-pickle",
   "packages": [
     "npm:pi-web-access",
     "npm:@gotgenes/pi-permission-system",
-    "npm:pi-codex-goal"
+    "npm:pi-codex-goal",
+    "git:github.com/ghoseb/pi-askuserquestion",
+    "npm:@tmustier/pi-usage-extension"
   ],
   "terminal": {
     "showTerminalProgress": true
