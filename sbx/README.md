@@ -1,6 +1,6 @@
 # Usage [Docker Sandboxes](https://docs.docker.com/ai/sandboxes/)
 
-## Copilot sandbox example
+## Copilot sandbox
 
 ### Sandbox for copilot
 
@@ -20,6 +20,8 @@ echo "$(gh auth token)" | sbx secret set -g github
 sbx rm copilot-test
 ```
 
+## Worktree support
+
 ### Clone git repository (only commited files in the clone)
 
 ```bash
@@ -33,7 +35,9 @@ git fetch sandbox-github-clone
 git checkout sandbox-github-clone/main
 ```
 
-### List network all policies
+## Network policies
+
+### List all network policies
 
 ```bash
 sbx policy ls network
@@ -51,7 +55,7 @@ sbx policy allow network -g eslint.org
 sbx policy rm network -g --resource eslint.org
 ```
 
-## Custom sandbox example
+## Custom sandbox
 
 ### Run a custom sandbox spec (pi-agent)
 
@@ -61,13 +65,28 @@ sbx run pi --kit ./sbx/pi;
 
 ### Add skills + provider to custom sandbox (pi-agent)
 
+Add skills to the sandbox.
+
 ```bash
 sbx kit add pi-pi-web-app-demo ./sbx/skills
+```
+
+Add provider to the sandbox.
+
+```bash
 sbx kit add pi-pi-web-app-demo ./sbx/pi-lm-studio
 ```
 
 ### Run a custom sandbox from github (pi-agent)
 
+Add github repository to allowed sources.
+
 ```bash
-sbx run pi --kit "git+https://github.com/flippii/dotfiles.git#dir=sbx/pi" --kit "git+https://github.com/flippii/dotfiles.git#dir=sbx/skills" 
+sbx settings set kit.allowedSources '["docker.io/","github.com/flippii/"]'
+```
+
+Run the custom kit.
+
+```bash
+sbx run pi --kit "git+https://github.com/flippii/dotfiles.git#dir=sbx/pi" --kit "git+https://github.com/flippii/dotfiles.git#dir=sbx/skills" --kit "git+https://github.com/flippii/dotfiles.git#dir=sbx/pi-lm-studio"
 ```
