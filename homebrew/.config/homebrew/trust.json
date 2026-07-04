@@ -1,0 +1,21 @@
+{
+  "trustedtaps": [
+    "asmvik/formulae",
+    "atomicjar/tap",
+    "catppuccin/tap",
+    "d12frosted/emacs-plus",
+    "derailed/k9s",
+    "docker/tap",
+    "felixkratz/formulae",
+    "gromgit/brewtils",
+    "hmbown/deepseek-tui",
+    "localstack/tap",
+    "manaflow-ai/cmux",
+    "manaflow-ai/cmuxbrew",
+    "mvndaemon/mvnd",
+    "nikitabobko/tap"
+  ],
+  "trustedcasks": [
+    "docker/tap/sbx"
+  ]
+}
