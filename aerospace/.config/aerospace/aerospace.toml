@@ -33,7 +33,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 300
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -60,13 +60,56 @@ persistent-workspaces = [
     "3",
     "4",
     "5",
-    "6",
-    "B",
-    "F",
-    "D",
-    "M",
-    "N"
+    "6"
 ]
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
+if.app-id = 'com.cmuxterm.app'
+run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
+if.app-id = 'org.torproject.torbrowser'
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
+if.app-id = 'com.sublimetext.4'
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.onenote.mac'
+run = "move-node-to-workspace 5"
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.thunderbird'
+run = "move-node-to-workspace 5"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.yanex.marta'
+run = "move-node-to-workspace 4"
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.pycharm'
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
+if.app-id = 'com.electron.dockerdesktop'
+run = "move-node-to-workspace 2"
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -76,12 +119,12 @@ persistent-workspaces = [
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 10
-inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
+# inner.vertical =   40
+inner.horizontal = [{ monitor.main = 20 }, 10]
+outer.left =       [{ monitor.main = 250 }, 10]
+outer.right =      [{ monitor.main = 250 }, 10]
+outer.bottom =     [{ monitor.main = 20 }, 10]
+outer.top =        [{ monitor.main = 20 }, 10]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -130,24 +173,20 @@ alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
-alt-b = 'workspace B' # for browser
-alt-f = 'workspace F' # for finder marta
-alt-d = 'workspace D' # ide docker-desktop
-alt-n = 'workspace N' # for notes email
-alt-t = 'workspace T' # for terminal shell
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-b = 'move-node-to-workspace B'
-alt-shift-f = 'move-node-to-workspace F'
-alt-shift-d = 'move-node-to-workspace D'
-alt-shift-n = 'move-node-to-workspace N'
-alt-shift-t = 'move-node-to-workspace T'
+alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
+alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
+alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
+alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
+alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#join-with
+alt-shift-left = 'join-with left'
+alt-shift-down = 'join-with down'
+alt-shift-up = 'join-with up'
+alt-shift-right = 'join-with right'
 
 # Previous/next workspace
 alt-u = 'workspace prev'
@@ -161,8 +200,8 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
-
 alt-shift-r = 'mode resize'
+alt-shift-enter = 'mode apps'
 
 [mode.resize.binding]
 h = 'resize width +50'
@@ -178,6 +217,9 @@ alt-shift-equal = 'resize smart +50'
 enter = 'mode main'
 esc = 'mode main'
 
+[mode.apps.binding]
+alt-g = ['exec-and-forget open -a Ghostty.app', 'mode main']
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -187,60 +229,10 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'Shottr'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
-run = "move-node-to-workspace D"
-
-[[on-window-detected]]
-if.app-id = 'com.cmuxterm.app'
-run = "move-node-to-workspace T"
-
-[[on-window-detected]]
-if.app-id = 'com.brave.Browser'
-run = "move-node-to-workspace B"
-
-[[on-window-detected]]
-if.app-id = 'org.torproject.torbrowser'
-run = "move-node-to-workspace B"
-
-[[on-window-detected]]
-if.app-id = 'com.sublimetext.4'
-run = "move-node-to-workspace N"
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.onenote.mac'
-run = "move-node-to-workspace N"
-
-[[on-window-detected]]
-if.app-id = 'org.mozilla.thunderbird'
-run = "move-node-to-workspace N"
-
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = "move-node-to-workspace F"
-#run = ['layout floating', 'move-node-to-workspace F']
-
-[[on-window-detected]]
-if.app-id = 'org.yanex.marta'
-run = "move-node-to-workspace F"
-
-[[on-window-detected]]
-if.app-id = 'com.jetbrains.pycharm'
-run = "move-node-to-workspace D"
-
-[[on-window-detected]]
-if.app-id = 'dev.zed.Zed'
-run = "move-node-to-workspace D"
-
-[[on-window-detected]]
-if.app-id = 'com.electron.dockerdesktop'
-run = "move-node-to-workspace D"
+[workspace-to-monitor-force-assignment]
+1 = '^DELL U.*$'
+2 = '^DELL U.*$'
+3 = '^DELL U.*$'
+4 = '^DELL U.*$'
+5 = '^DELL U.*$'
+6 = '^Built-in.*$'
