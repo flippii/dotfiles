@@ -130,11 +130,13 @@ let g:WhichKeyDesc_editor = "<Leader>e Editor"
 let g:WhichKeyDesc_editor_new_window = "<Leader>en Open in new Window"
 let g:WhichKeyDesc_next_window = "<Leader>n Next Window"
 
-nnoremap <Leader>qc :action CloseContent<CR>
-nnoremap <Leader>qa :action CloseAllEditors<CR>
-let g:WhichKeyDesc_tabs = "<Leader>q Tabs"
-let g:WhichKeyDesc_tabs_close_current = "<Leader>qc Close Current Tab"
-let g:WhichKeyDesc_tabs_close_all = "<Leader>qa Close All Tabs"
+nnoremap <Leader>wt :action CloseContent<CR>
+nnoremap <Leader>wx :action CloseAllEditors<CR>
+nnoremap <Leader>wq :action CloseProject<CR>
+let g:WhichKeyDesc_windows = "<Leader>w Window"
+let g:WhichKeyDesc_windows_close_current = "<Leader>wt Close Current Tab"
+let g:WhichKeyDesc_windows_close_all = "<Leader>wx Close All Tabs"
+let g:WhichKeyDesc_windows_close_project = "<Leader>wq Close Project"
 
 """ Editor source code
 
@@ -144,11 +146,11 @@ vnoremap > >gv
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
 
-nnoremap <A-j> :action MoveLineUp<CR>
-nnoremap <A-k> :action MoveLineDown<CR>
+nnoremap <C-j> :action MoveLineUp<CR>
+nnoremap <C-k> :action MoveLineDown<CR>
 
-nnoremap <A-S-j> :action MoveStatementDown<CR>
-nnoremap <A-S-k> :action MoveStatementUp<CR>
+nnoremap <C-S-j> :action MoveStatementDown<CR>
+nnoremap <C-S-k> :action MoveStatementUp<CR>
 
 nnoremap zc :action CollapseRegion<CR>
 nnoremap zo :action ExpandRegion<CR>
@@ -158,19 +160,19 @@ let g:WhichKeyDesc_regions = "<Leader>z Regions"
 let g:WhichKeyDesc_regions_collapse_all = "<Leader>zc Collapse All Regions"
 let g:WhichKeyDesc_regions_expand_all = "<Leader>zo Expand All Regions"
 
-nnoremap <Leader>ln :action RenameElement<CR>
-nnoremap <Leader>lm :action ExtractMethod<CR>
-nnoremap <Leader>lv :action IntroduceVariable<CR>
-nnoremap <Leader>lf :action IntroduceField<CR>
-nnoremap <Leader>ls :action ChangeSignature<CR>
-nnoremap <Leader>lr :action Refactorings.QuickListPopupAction<CR>
-let g:WhichKeyDesc_language = "<Leader>l Language"
-let g:WhichKeyDesc_language_rename = "<Leader>ln Rename Element"
-let g:WhichKeyDesc_language_extract = "<Leader>lm Extract Method"
-let g:WhichKeyDesc_language_variable = "<Leader>lv Introduce Variable"
-let g:WhichKeyDesc_language_field = "<Leader>lf Introduce Field"
-let g:WhichKeyDesc_language_change_signature = "<Leader>ls Change Signature"
-let g:WhichKeyDesc_language_quick_list_popup = "<Leader>lr Quick List Popup"
+nnoremap <Leader>rn :action RenameElement<CR>
+nnoremap <Leader>rm :action ExtractMethod<CR>
+nnoremap <Leader>rv :action IntroduceVariable<CR>
+nnoremap <Leader>rf :action IntroduceField<CR>
+nnoremap <Leader>rs :action ChangeSignature<CR>
+nnoremap <Leader>rr :action Refactorings.QuickListPopupAction<CR>
+let g:WhichKeyDesc_language = "<Leader>r Language"
+let g:WhichKeyDesc_language_rename = "<Leader>rn Rename Element"
+let g:WhichKeyDesc_language_extract = "<Leader>rm Extract Method"
+let g:WhichKeyDesc_language_variable = "<Leader>rv Introduce Variable"
+let g:WhichKeyDesc_language_field = "<Leader>rf Introduce Field"
+let g:WhichKeyDesc_language_change_signature = "<Leader>rs Change Signature"
+let g:WhichKeyDesc_language_quick_list_popup = "<Leader>rr Quick List Popup"
 
 nnoremap <Leader>= :action ReformatCode<CR>
 nnoremap <Leader>o :action OptimizeImports<CR>
@@ -180,9 +182,9 @@ let g:WhichKeyDesc_organize_imports = "<Leader>o Organize Imports"
 sethandler <C-r> a:vim
 
 nnoremap <C-r> :action RecentFiles<CR>
-nnoremap <Leader>r :action RecentLocations<CR>
+nnoremap <Leader>R :action RecentLocations<CR>
 nnoremap <Leader>h :action LocalHistory.ShowHistory<CR>
-let g:WhichKeyDesc_recent_locations = "<Leader>r Recent Locations"
+let g:WhichKeyDesc_recent_locations = "<Leader>R Recent Locations"
 let g:WhichKeyDesc_show_local_history = "<Leader>h Show Local History"
 
 nnoremap <Leader>ge :action GotoNextError<CR>
@@ -195,21 +197,19 @@ imap <A-space> <Action>(CodeCompletion)
 
 """ Searching and Source Code Navigation
 
-sethandler <M-/> a:vim
+nnoremap <Leader>sp :action FindInPath<CR>
+let g:WhichKeyDesc_search = "<Leader>s Search"
+let g:WhichKeyDesc_search_in_path = "<Leader>sp Find in Path"
 
-nnoremap <M-/> :action FindInPath<CR>
-nnoremap <M-f> :action GotoFile<CR>
-
-nnoremap <Leader>s :action GotoRelated<CR>
+nnoremap <Leader>S :action GotoRelated<CR>
 nnoremap <Leader>y :action CallHierarchy<CR>
 nnoremap <Leader>u :action FindUsages<CR>
-let g:WhichKeyDesc_goto_related = "<Leader>s Goto Related"
+let g:WhichKeyDesc_goto_related = "<Leader>R Goto Related"
 let g:WhichKeyDesc_call_hierarchy = "<Leader>y Call Hierarchy"
 let g:WhichKeyDesc_find_usages = "<Leader>u Find Usages"
 
-nnoremap <M-s> :action FileStructurePopup<CR>
-
 nnoremap <Leader>gc :action GotoClass<CR>
+nnoremap <Leader>gf :action GotoFile<CR>
 nnoremap <Leader>gd :action GotoDeclaration<CR>
 nnoremap <Leader>gD :action GotoTypeDeclaration<CR>
 nnoremap <Leader>gi :action GotoImplementation<CR>
@@ -219,6 +219,7 @@ nnoremap <Leader>gs :action GotoSymbol<CR>
 nnoremap <Leader>ga :action GotoAction<CR>
 let g:WhichKeyDesc_goto_class = "<Leader>gc Goto Class"
 let g:WhichKeyDesc_goto_declaration = "<Leader>gd Goto Declaration"
+let g:WhichKeyDesc_goto_declaration = "<Leader>gf Goto File"
 let g:WhichKeyDesc_goto_type_declaration = "<Leader>gD Goto Type-Declaration"
 let g:WhichKeyDesc_goto_implementation = "<Leader>gi Goto Implementation"
 let g:WhichKeyDesc_goto_test = "<Leader>gt Goto Test"
@@ -226,25 +227,27 @@ let g:WhichKeyDesc_goto_super_method = "<Leader>gm Goto Super-Method"
 let g:WhichKeyDesc_goto_symbol = "<Leader>gs Goto Symbol"
 let g:WhichKeyDesc_goto_actions = "<Leader>ga Goto Actions"
 
-nnoremap <Leader>iu :action ShowUsages<CR>
-nnoremap <leader>iU :action ShowUmlDiagram<CR>
-nnoremap <Leader>ie :action ShowErrorDescription<CR>
-nnoremap <Leader>ii :action QuickImplementations<CR>
-nnoremap <Leader>it :action QuickTypeDefinition<CR>
-nnoremap <Leader>ie :action ExpressionTypeInfo<CR>
-nnoremap <leader>ip :action ParameterInfo<CR>
-nnoremap <leader>ij :action QuickJavaDoc<CR>
-nnoremap <leader>im :action MethodHierarchy<CR>
-let g:WhichKeyDesc_info = "<Leader>i Information"
-let g:WhichKeyDesc_info_usages = "<Leader>iu Show Usages"
-let g:WhichKeyDesc_info_uml_diagram = "<Leader>iU UML Diagram"
-let g:WhichKeyDesc_info_error_description = "<Leader>ie Show Error Description"
-let g:WhichKeyDesc_info_quick_implementations = "<Leader>ii Quick Implementations"
-let g:WhichKeyDesc_info_quick_type_definitions = "<Leader>it Quick Type Definitions"
-let g:WhichKeyDesc_info_expressions_type_info = "<Leader>ie Expressions Type Info"
-let g:WhichKeyDesc_info_parameter = "<Leader>ip Parameter Info"
-let g:WhichKeyDesc_info_javadoc = "<Leader>ij Java Doc"
-let g:WhichKeyDesc_info_method_hierarchy = "<Leader>im Method Hierarchy"
+nnoremap <Leader>cu :action ShowUsages<CR>
+nnoremap <leader>cU :action ShowUmlDiagram<CR>
+nnoremap <Leader>ce :action ShowErrorDescription<CR>
+nnoremap <Leader>ci :action QuickImplementations<CR>
+nnoremap <Leader>ct :action QuickTypeDefinition<CR>
+nnoremap <Leader>ce :action ExpressionTypeInfo<CR>
+nnoremap <leader>cp :action ParameterInfo<CR>
+nnoremap <leader>cj :action QuickJavaDoc<CR>
+nnoremap <leader>cm :action MethodHierarchy<CR>
+nnoremap <leader>cf :action FileStructurePopup<CR>
+let g:WhichKeyDesc_info = "<Leader>c Code"
+let g:WhichKeyDesc_info_usages = "<Leader>cu Show Usages"
+let g:WhichKeyDesc_info_uml_diagram = "<Leader>cU UML Diagram"
+let g:WhichKeyDesc_info_error_description = "<Leader>ce Show Error Description"
+let g:WhichKeyDesc_info_quick_implementations = "<Leader>ci Quick Implementations"
+let g:WhichKeyDesc_info_quick_type_definitions = "<Leader>ct Quick Type Definitions"
+let g:WhichKeyDesc_info_expressions_type_info = "<Leader>ce Expressions Type Info"
+let g:WhichKeyDesc_info_parameter = "<Leader>cp Parameter Info"
+let g:WhichKeyDesc_info_javadoc = "<Leader>cj Java Doc"
+let g:WhichKeyDesc_info_method_hierarchy = "<Leader>cm Method Hierarchy"
+let g:WhichKeyDesc_info_file_structure q = "<Leader>cf File Structure Popup"
 
 """ Tool Windows
 
@@ -262,7 +265,6 @@ nnoremap <Leader>we :action ActivateRunToolWindow<CR>
 nnoremap <Leader>ws :action ActivateStructureToolWindow<CR>
 nnoremap <Leader>wc :action ActivateCommitToolWindow<CR>
 nnoremap <Leader>wv :action ActivateVersionControlToolWindow<CR>
-let g:WhichKeyDesc_windows = "<Leader>w Tool Windows"
 let g:WhichKeyDesc_windows_database= "<Leader>wa Database Window"
 let g:WhichKeyDesc_windows_build = "<Leader>wb Build Tool"
 let g:WhichKeyDesc_windows_project = "<Leader>wp Project Window"
