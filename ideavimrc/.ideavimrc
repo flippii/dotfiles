@@ -94,11 +94,11 @@ set incsearch
 
 """ Distraction Free Mode
 nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
-map <leader>Dz <action>(ToggleZenMode)
-map <leader>Df <action>(ToggleFullScreen)
-let g:WhichKeyDesc_display = "<Leader>D Display options"
-let g:WhichKeyDesc_zen_mode = "<Leader>Dz Toggle Zen mode"
-let g:WhichKeyDesc_fullscreen = "<Leader>Df Toggle full screen"
+map <leader>uz <action>(ToggleZenMode)
+map <leader>uf <action>(ToggleFullScreen)
+let g:WhichKeyDesc_ui = "<Leader>u UI"
+let g:WhichKeyDesc_ui_zen_mode = "<Leader>uz Toggle Zen mode"
+let g:WhichKeyDesc_ui_fullscreen = "<Leader>uf Toggle full screen"
 
 """ Navigation
 
@@ -123,12 +123,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <TAB> gt
 " switch to previous tab
 nnoremap <S-TAB> gT
-
-nnoremap <Leader>en :action EditSourceInNewWindow<CR>
-nnoremap <Leader>n :action NextWindow<CR>
-let g:WhichKeyDesc_editor = "<Leader>e Editor"
-let g:WhichKeyDesc_editor_new_window = "<Leader>en Open in new Window"
-let g:WhichKeyDesc_next_window = "<Leader>n Next Window"
 
 nnoremap <Leader>wt :action CloseContent<CR>
 nnoremap <Leader>wx :action CloseAllEditors<CR>
@@ -166,13 +160,13 @@ nnoremap <Leader>rv :action IntroduceVariable<CR>
 nnoremap <Leader>rf :action IntroduceField<CR>
 nnoremap <Leader>rs :action ChangeSignature<CR>
 nnoremap <Leader>rr :action Refactorings.QuickListPopupAction<CR>
-let g:WhichKeyDesc_language = "<Leader>r Language"
-let g:WhichKeyDesc_language_rename = "<Leader>rn Rename Element"
-let g:WhichKeyDesc_language_extract = "<Leader>rm Extract Method"
-let g:WhichKeyDesc_language_variable = "<Leader>rv Introduce Variable"
-let g:WhichKeyDesc_language_field = "<Leader>rf Introduce Field"
-let g:WhichKeyDesc_language_change_signature = "<Leader>rs Change Signature"
-let g:WhichKeyDesc_language_quick_list_popup = "<Leader>rr Quick List Popup"
+let g:WhichKeyDesc_refactoring = "<Leader>r Refactoring"
+let g:WhichKeyDesc_refactoring_rename = "<Leader>rn Rename Element"
+let g:WhichKeyDesc_refactoring_extract = "<Leader>rm Extract Method"
+let g:WhichKeyDesc_refactoring_variable = "<Leader>rv Introduce Variable"
+let g:WhichKeyDesc_refactoring_field = "<Leader>rf Introduce Field"
+let g:WhichKeyDesc_refactoring_change_signature = "<Leader>rs Change Signature"
+let g:WhichKeyDesc_refactoring_quick_list_popup = "<Leader>rr Quick List Popup"
 
 nnoremap <Leader>= :action ReformatCode<CR>
 nnoremap <Leader>o :action OptimizeImports<CR>
