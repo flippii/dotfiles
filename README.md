@@ -4,6 +4,7 @@
 
 * Install [Homebrew](https://brew.sh/) if you don't have it already.
 * Install [Sdkman](https://sdkman.io/) if you don't have it already.
+* Install and configure [Border](https://ingo-richter.io/post/2024/adding-a-colorful-border-around-macos-windows/) if you don't have it already. 
 
 ## Homebrew export installed programs
 

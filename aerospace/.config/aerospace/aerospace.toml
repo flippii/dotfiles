@@ -191,8 +191,8 @@ alt-shift-up = 'join-with up'
 alt-shift-right = 'join-with right'
 
 # Previous/next workspace
-alt-u = 'workspace prev'
-alt-i = 'workspace next'
+alt-i = 'workspace prev'
+alt-p = 'workspace next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
