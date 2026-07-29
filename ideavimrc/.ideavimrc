@@ -213,7 +213,7 @@ nnoremap <Leader>gs :action GotoSymbol<CR>
 nnoremap <Leader>ga :action GotoAction<CR>
 let g:WhichKeyDesc_goto_class = "<Leader>gc Goto Class"
 let g:WhichKeyDesc_goto_declaration = "<Leader>gd Goto Declaration"
-let g:WhichKeyDesc_goto_declaration = "<Leader>gf Goto File"
+let g:WhichKeyDesc_goto_file = "<Leader>gf Goto File"
 let g:WhichKeyDesc_goto_type_declaration = "<Leader>gD Goto Type-Declaration"
 let g:WhichKeyDesc_goto_implementation = "<Leader>gi Goto Implementation"
 let g:WhichKeyDesc_goto_test = "<Leader>gt Goto Test"
