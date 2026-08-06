@@ -6,7 +6,6 @@
 //  - https://zed.dev/docs/all-actions
 //
 // To see the default key bindings run `zed: open default keymap` from the command palette.
-// keymap.json, generated at Sat Mar 22 2025 17:00:58 GMT+0800 (Singapore Standard Time)
 [
 	{
 		"context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
@@ -31,9 +30,6 @@
 			"space s w": "pane::DeploySearch",
 			// AIAgent integration
 			"space a a": "agent::ToggleFocus",
-			"space a s": "agent::AddSelectionToThread",
-			// Edit predictions
-			"space c t": "editor::ShowEditPrediction",
 			// Go to file with `gf`
 			"g f": "editor::OpenExcerpts",
 			// Enhanced Diagnostics (Neovim-inspired)
@@ -54,15 +50,6 @@
 		},
 	},
 	{
-		"context": "ContextEditor > Editor", // Targets the input editor within the Assistant panel
-		"use_key_equivalents": true, // Important for modifier keys like ctrl
-		"bindings": {
-			// Note: This overrides the default 'enter' behavior *only* in this context
-			// if you also want 'enter' to still work, you don't need to add it here,
-			// as it's inherited from the base keymap.
-		},
-	},
-	{
 		"context": "Editor && vim_mode == normal && !VimWaiting && !menu",
 		"bindings": {
 			// put key-bindings here if you want them to work only in normal mode
@@ -72,20 +59,11 @@
 			"ctrl-l": "workspace::ActivatePaneRight",
 			"ctrl-k": "workspace::ActivatePaneUp",
 			"ctrl-j": "workspace::ActivatePaneDown",
-			// Opt jklh to move tab
-			"alt-l": [
-				"workspace::MoveItemToPaneInDirection",
-				{ "direction": "right" },
-			],
-			"alt-h": [
-				"workspace::MoveItemToPaneInDirection",
-				{ "direction": "left" },
-			],
-			"alt-j": [
-				"workspace::MoveItemToPaneInDirection",
-				{ "direction": "down" },
-			],
-			"alt-k": ["workspace::MoveItemToPaneInDirection", { "direction": "up" }],
+			// Ctrl Opt jklh to move tab
+			"ctrl-alt-l": ["workspace::MoveItemToPaneInDirection", { "direction": "right" }],
+			"ctrl-alt-h": ["workspace::MoveItemToPaneInDirection", { "direction": "left" }],
+			"ctrl-alt-j": ["workspace::MoveItemToPaneInDirection", { "direction": "down" }],
+			"ctrl-alt-k": ["workspace::MoveItemToPaneInDirection", { "direction": "up" }],
 			// Swap pane when editor is split
 			"space w h": "workspace::SwapPaneLeft",
 			"space w l": "workspace::SwapPaneRight",
@@ -167,8 +145,6 @@
 		"bindings": {
 			// visual, visual line & visual block modes
 			"g c": "editor::ToggleComments",
-			"shift-j": "editor::MoveLineDown",
-			"shift-k": "editor::MoveLineUp",
 		},
 	},
 	// Better escape
@@ -177,8 +153,6 @@
 		"bindings": {
 			"k j": "vim::NormalBefore", // remap jj in insert mode to escape
 			"j k": "vim::NormalBefore", // remap jk in insert mode to escape
-			"shift-j": "editor::MoveLineDown",
-			"shift-k": "editor::MoveLineUp",
 		},
 	},
 	// Rename
@@ -280,6 +254,7 @@
 			"S": ["vim::PushSneakBackward", {}],
 		},
 	},
+	// Which key, refer to https://github.com/zed-industries/zed/pull/43618
 	{
 		"context": "(VimControl && !menu)",
 		"bindings": {
