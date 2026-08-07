@@ -19,7 +19,11 @@
 			"type": "registry",
 		},
 		"opencode": {
-			"type": "registry",
+			"default_config_options": {
+        "mode": "plan",
+        "model": "opencode/big-pickle"
+      },
+      "type": "registry",
 		},
 	},
 	"session": {

@@ -14,6 +14,10 @@
 			// Git
 			"space g h d": "editor::ToggleSelectedDiffHunks",
 			"space g s": "git_panel::ToggleFocus",
+			// Outline panel
+			"space o p": "outline_panel::ToggleFocus",
+			// Debug panel
+			"space d p": "debug_panel::ToggleFocus",
 			// Toggle inlay hints
 			"space t i": "editor::ToggleInlayHints",
 			// Toggle soft wrap
@@ -35,6 +39,10 @@
 			// Enhanced Diagnostics (Neovim-inspired)
 			"space d e": "editor::Hover",
 			"space d q": "diagnostics::Deploy",
+			// Open file or directory
+			"space w o": "workspace::Open",
+			// Close project
+      "space q p": "workspace::CloseProject",
 		},
 	},
 	{
@@ -123,6 +131,7 @@
 			"space e": "pane::RevealInProjectPanel",
 			// Buffer search (renamed from conflicting space w)
 			"space s b": "buffer_search::Deploy",
+			// Move line up/down
 			"shift-j": "editor::MoveLineDown",
 			"shift-k": "editor::MoveLineUp",
 		},
@@ -137,6 +146,10 @@
 			"space f p": "projects::OpenRecent",
 			// Show project panel
 			"space e": "pane::RevealInProjectPanel",
+			// Open file or directory
+		  "space w o": "workspace::Open",
+			// Close project
+      "space q p": "workspace::CloseProject",
 		},
 	},
 	// Comment code
@@ -214,10 +227,10 @@
 	{
 		"context": "Dock",
 		"bindings": {
-			"ctrl-w h": "workspace::ActivatePaneLeft",
-			"ctrl-w l": "workspace::ActivatePaneRight",
-			"ctrl-w k": "workspace::ActivatePaneUp",
-			"ctrl-w j": "workspace::ActivatePaneDown",
+			"ctrl-h": "workspace::ActivatePaneLeft",
+			"ctrl-l": "workspace::ActivatePaneRight",
+			"ctrl-k": "workspace::ActivatePaneUp",
+			"ctrl-j": "workspace::ActivatePaneDown",
 		},
 	},
 	{
