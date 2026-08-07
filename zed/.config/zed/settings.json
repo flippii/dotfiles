@@ -48,7 +48,7 @@
 		"Courier New",
 	],
 	"show_whitespaces": "all",
-	"show_edit_predictions": false,
+	"show_edit_predictions": true,
 	"edit_predictions": {
 		"provider": "zed",
 	},
@@ -286,6 +286,15 @@
 				"!pyright",
 				"!pylsp",
 			],
+		},
+		"Rust": {
+			"hard_tabs": false,
+			"formatter": {
+				"language_server": {
+					"name": "rust-analyzer",
+				},
+			},
+			"language_servers": ["rust-analyzer", "!rustc"],
 		},
 	},
 	// Use zed commit editor
