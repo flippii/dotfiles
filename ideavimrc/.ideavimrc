@@ -195,12 +195,12 @@ nnoremap <Leader>sp :action FindInPath<CR>
 let g:WhichKeyDesc_search = "<Leader>s Search"
 let g:WhichKeyDesc_search_in_path = "<Leader>sp Find in Path"
 
-nnoremap <Leader>S :action GotoRelated<CR>
+nnoremap <Leader>R :action GotoRelated<CR>
 nnoremap <Leader>y :action CallHierarchy<CR>
-nnoremap <Leader>u :action FindUsages<CR>
+nnoremap <Leader>U :action FindUsages<CR>
 let g:WhichKeyDesc_goto_related = "<Leader>R Goto Related"
 let g:WhichKeyDesc_call_hierarchy = "<Leader>y Call Hierarchy"
-let g:WhichKeyDesc_find_usages = "<Leader>u Find Usages"
+let g:WhichKeyDesc_find_usages = "<Leader>U Find Usages"
 
 nnoremap <Leader>gc :action GotoClass<CR>
 nnoremap <Leader>gf :action GotoFile<CR>
