@@ -204,17 +204,17 @@ alt-p = 'workspace next'
 alt-tab = 'workspace-back-and-forth'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-cmd-alt-ctrl-shift-b = ['exec-and-forget open -a Brave Browser.app', 'mode main']
+cmd-alt-ctrl-shift-b = ['exec-and-forget open -a "Brave Browser.app"', 'mode main']
 cmd-alt-ctrl-shift-g = ['exec-and-forget open -a Ghostty.app', 'mode main']
 cmd-alt-ctrl-shift-p = ['exec-and-forget open -a PyCharm.app', 'mode main']
 cmd-alt-ctrl-shift-z = ['exec-and-forget open -a Zed.app', 'mode main']
 cmd-alt-ctrl-shift-m = ['exec-and-forget open -a Marta.app', 'mode main']
 cmd-alt-ctrl-shift-t = ['exec-and-forget open -a Thunderbird.app', 'mode main']
-cmd-alt-ctrl-shift-n = ['exec-and-forget open -a Microsoft OneNote.app', 'mode main']
-cmd-alt-ctrl-shift-s = ['exec-and-forget open -a Sublime Text.app', 'mode main']
+cmd-alt-ctrl-shift-n = ['exec-and-forget open -a "Microsoft OneNote.app"', 'mode main']
+cmd-alt-ctrl-shift-s = ['exec-and-forget open -a "Sublime Text.app"', 'mode main']
 cmd-alt-ctrl-shift-d = ['exec-and-forget open -a Docker.app', 'mode main']
 cmd-alt-ctrl-shift-f = ['exec-and-forget open -a Freelens.app', 'mode main']
-cmd-alt-ctrl-shift-l = ['exec-and-forget open -a LM Studio.app', 'mode main']
+cmd-alt-ctrl-shift-l = ['exec-and-forget open -a "LM Studio.app"', 'mode main']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
