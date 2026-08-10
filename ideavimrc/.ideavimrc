@@ -35,6 +35,9 @@
 set scrolloff=5
 set history=1000
 
+set nu
+set relativenumber
+
 " Plugins
 set surround
 set NERDTree
@@ -74,13 +77,11 @@ set matchpairs+=<:>
 " smart line joining
 set ideajoin
 
-let g:WhichKeyDesc_vim_config = "<leader>c Vim Configuration"
-" open config
-noremap <leader>cc :edit ~/.ideavimrc<cr>
-let g:WhichKeyDesc_vim_config_edit = "<leader>cc Edit Vim Configuration File"
-" source config
-noremap <leader>cs :source ~/.ideavimrc<cr>:nohlsearch<cr>
-let g:WhichKeyDesc_vim_config_reload = "<leader>cs Reload Vim Configuration File"
+noremap <leader>vc :edit ~/.ideavimrc<cr>
+noremap <leader>vs :source ~/.ideavimrc<cr>:nohlsearch<cr>
+let g:WhichKeyDesc_vim_config = "<leader>v Vim"
+let g:WhichKeyDesc_vim_config_edit = "<leader>vc Edit Vim Configuration"
+let g:WhichKeyDesc_vim_config_reload = "<leader>vs Reload Vim Configuration"
 
 set hlsearch
 " remove search highlights
@@ -231,17 +232,17 @@ nnoremap <leader>cp :action ParameterInfo<CR>
 nnoremap <leader>cj :action QuickJavaDoc<CR>
 nnoremap <leader>cm :action MethodHierarchy<CR>
 nnoremap <leader>cf :action FileStructurePopup<CR>
-let g:WhichKeyDesc_info = "<Leader>c Code"
-let g:WhichKeyDesc_info_usages = "<Leader>cu Show Usages"
-let g:WhichKeyDesc_info_uml_diagram = "<Leader>cU UML Diagram"
-let g:WhichKeyDesc_info_error_description = "<Leader>ce Show Error Description"
-let g:WhichKeyDesc_info_quick_implementations = "<Leader>ci Quick Implementations"
-let g:WhichKeyDesc_info_quick_type_definitions = "<Leader>ct Quick Type Definitions"
-let g:WhichKeyDesc_info_expressions_type_info = "<Leader>ce Expressions Type Info"
-let g:WhichKeyDesc_info_parameter = "<Leader>cp Parameter Info"
-let g:WhichKeyDesc_info_javadoc = "<Leader>cj Java Doc"
-let g:WhichKeyDesc_info_method_hierarchy = "<Leader>cm Method Hierarchy"
-let g:WhichKeyDesc_info_file_structure q = "<Leader>cf File Structure Popup"
+let g:WhichKeyDesc_code = "<Leader>c Code"
+let g:WhichKeyDesc_code_usages = "<Leader>cu Show Usages"
+let g:WhichKeyDesc_code_uml_diagram = "<Leader>cU UML Diagram"
+let g:WhichKeyDesc_code_error_description = "<Leader>ce Show Error Description"
+let g:WhichKeyDesc_code_quick_implementations = "<Leader>ci Quick Implementations"
+let g:WhichKeyDesc_code_quick_type_definitions = "<Leader>ct Quick Type Definitions"
+let g:WhichKeyDesc_code_expressions_type_info = "<Leader>ce Expressions Type Info"
+let g:WhichKeyDesc_code_parameter = "<Leader>cp Parameter Info"
+let g:WhichKeyDesc_code_javadoc = "<Leader>cj Java Doc"
+let g:WhichKeyDesc_code_method_hierarchy = "<Leader>cm Method Hierarchy"
+let g:WhichKeyDesc_code_file_structure = "<Leader>cf File Structure Popup"
 
 """ Tool Windows
 
