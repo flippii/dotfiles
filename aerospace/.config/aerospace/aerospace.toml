@@ -62,7 +62,8 @@ persistent-workspaces = [
     "5",
     "6",
     "7",
-    "8"
+    "8",
+    "9"
 ]
 
 [[on-window-detected]]
@@ -179,6 +180,7 @@ alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -189,6 +191,7 @@ alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
 alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
 alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
 alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
+alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
 alt-shift-left = 'join-with left'
@@ -215,6 +218,8 @@ cmd-alt-ctrl-shift-s = ['exec-and-forget open -a "Sublime Text.app"', 'mode main
 cmd-alt-ctrl-shift-d = ['exec-and-forget open -a Docker.app', 'mode main']
 cmd-alt-ctrl-shift-f = ['exec-and-forget open -a Freelens.app', 'mode main']
 cmd-alt-ctrl-shift-l = ['exec-and-forget open -a "LM Studio.app"', 'mode main']
+cmd-alt-ctrl-shift-o = ['exec-and-forget open -a "Tor Browser.app"', 'mode main']
+cmd-alt-ctrl-shift-v = ['exec-and-forget open -a FluidVoice.app', 'mode main']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
@@ -251,4 +256,5 @@ backspace = ['close-all-windows-but-current', 'mode main']
 5 = '^DELL U.*$'
 6 = '^DELL U.*$'
 7 = '^DELL U.*$'
-8 = '^Built-in.*$'
+8 = '^DELL U.*$'
+9 = '^Built-in.*$'
