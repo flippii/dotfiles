@@ -288,6 +288,17 @@
 			},
 			"language_servers": ["rust-analyzer", "!rustc"],
 		},
+		"Go": {
+				"formatter": {
+						"language_server": {
+							  "name": "gopls",
+						},
+				},
+				"language_servers": [
+					"gopls",
+					"!goimports"
+				],
+		},
 		"Markdown": {
 				"format_on_save": "off",
 				"preferred_line_length": 80,
