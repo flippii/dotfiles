@@ -11,6 +11,7 @@
 		"code_actions": true,
 	},
 	"show_signature_help_after_edits": true,
+	"show_completions_on_input": true,
 	"auto_signature_help": true,
 	"redact_private_values": true,
 	"cli_default_open_behavior": "existing_window",
@@ -207,20 +208,6 @@
 	},
 	// LSP
 	"lsp": {
-		"basedpyright": {
-			"settings": {
-				"python": {
-					"pythonPath": ".venv/bin/python",
-				},
-			},
-		},
-		"ruff": {
-			"initialization_options": {
-				"settings": {
-					"configuration": "ruff.toml",
-				},
-			},
-		},
 		"rust-analyzer": {
 			"initialization_options": {
 				"cargo": {
@@ -277,18 +264,19 @@
 			"show_edit_predictions": false,
 			"hard_tabs": true,
 			"format_on_save": "on",
+			"tab_size": 4,
 			"formatter": {
-				"language_server": {
-					"name": "ruff",
-				},
+					"language_server": {
+							"name": "ruff",
+					},
 			},
 			"language_servers": [
-				"ty",
-				"ruff",
-				"!basedpyright",
-				"!pyrefly",
-				"!pyright",
-				"!pylsp",
+					"ty",
+					"ruff",
+					"basedpyright",
+					"!pyrefly",
+					"!pyright",
+					"!pylsp",
 			],
 		},
 		"Rust": {
@@ -300,6 +288,10 @@
 			},
 			"language_servers": ["rust-analyzer", "!rustc"],
 		},
+		"Markdown": {
+				"format_on_save": "off",
+				"preferred_line_length": 80,
+		}
 	},
 	// Use zed commit editor
 	"terminal": {

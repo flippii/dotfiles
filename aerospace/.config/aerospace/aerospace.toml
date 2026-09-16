@@ -75,7 +75,7 @@ if.app-id = 'com.cmuxterm.app'
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
-if.app-id = 'com.brave.Browser'
+if.app-id = 'net.imput.helium'
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
@@ -124,8 +124,8 @@ run = "move-node-to-workspace 2"
 [gaps]
 inner.vertical =   [{ monitor.main = 20 }, 10]
 inner.horizontal = [{ monitor.main = 20 }, 10]
-outer.left =       [{ monitor.main = 250 }, 10]
-outer.right =      [{ monitor.main = 250 }, 10]
+outer.left =       [{ monitor.main = 150 }, 10]
+outer.right =      [{ monitor.main = 150 }, 10]
 outer.bottom =     [{ monitor.main = 20 }, 10]
 outer.top =        [{ monitor.main = 20 }, 10]
 
@@ -207,7 +207,7 @@ alt-p = 'workspace next'
 alt-tab = 'workspace-back-and-forth'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-cmd-alt-ctrl-shift-b = ['exec-and-forget open -a "Brave Browser.app"', 'mode main']
+cmd-alt-ctrl-shift-b = ['exec-and-forget open -a "Helium.app"', 'mode main']
 cmd-alt-ctrl-shift-g = ['exec-and-forget open -a Ghostty.app', 'mode main']
 cmd-alt-ctrl-shift-p = ['exec-and-forget open -a PyCharm.app', 'mode main']
 cmd-alt-ctrl-shift-z = ['exec-and-forget open -a Zed.app', 'mode main']
