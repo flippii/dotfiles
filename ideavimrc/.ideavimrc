@@ -155,6 +155,15 @@ let g:WhichKeyDesc_regions = "<Leader>z Regions"
 let g:WhichKeyDesc_regions_collapse_all = "<Leader>zc Collapse All Regions"
 let g:WhichKeyDesc_regions_expand_all = "<Leader>zo Expand All Regions"
 
+if &ide =~? 'intellij idea'
+    nmap <Leader>nj :action NewClass<CR>
+    nmap <Leader>nk :action Kotlin.NewFile<CR>
+
+    let g:WhichKeyDesc_new = "<Leader>n New Class"
+    let g:WhichKeyDesc_new_java_file = "<Leader>nj New Java File"
+    let g:WhichKeyDesc_new_kotlin_file = "<Leader>nk New Kotlin File"
+endif
+
 nnoremap <Leader>rn :action RenameElement<CR>
 nnoremap <Leader>rm :action ExtractMethod<CR>
 nnoremap <Leader>rv :action IntroduceVariable<CR>
@@ -229,7 +238,6 @@ nnoremap <Leader>ci :action QuickImplementations<CR>
 nnoremap <Leader>ct :action QuickTypeDefinition<CR>
 nnoremap <Leader>ce :action ExpressionTypeInfo<CR>
 nnoremap <leader>cp :action ParameterInfo<CR>
-nnoremap <leader>cj :action QuickJavaDoc<CR>
 nnoremap <leader>cm :action MethodHierarchy<CR>
 nnoremap <leader>cf :action FileStructurePopup<CR>
 let g:WhichKeyDesc_code = "<Leader>c Code"
@@ -240,9 +248,14 @@ let g:WhichKeyDesc_code_quick_implementations = "<Leader>ci Quick Implementation
 let g:WhichKeyDesc_code_quick_type_definitions = "<Leader>ct Quick Type Definitions"
 let g:WhichKeyDesc_code_expressions_type_info = "<Leader>ce Expressions Type Info"
 let g:WhichKeyDesc_code_parameter = "<Leader>cp Parameter Info"
-let g:WhichKeyDesc_code_javadoc = "<Leader>cj Java Doc"
 let g:WhichKeyDesc_code_method_hierarchy = "<Leader>cm Method Hierarchy"
 let g:WhichKeyDesc_code_file_structure = "<Leader>cf File Structure Popup"
+
+if &ide =~? 'intellij idea'
+    nnoremap <leader>cj :action QuickJavaDoc<CR>
+
+    let g:WhichKeyDesc_info_javadoc = "<Leader>cj Java Doc"
+endif
 
 """ Tool Windows
 
@@ -253,7 +266,6 @@ nnoremap <C-x> :action HideAllWindows<CR>
 nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
 
 nnoremap <Leader>wa :action ActivateDatabaseToolWindow<CR>
-nnoremap <Leader>wb :action ActivateBuildToolWindow<CR>
 nnoremap <Leader>wp :action ActivateProjectToolWindow<CR>
 nnoremap <Leader>wd :action ActivateDebugToolWindow<CR>
 nnoremap <Leader>we :action ActivateRunToolWindow<CR>
@@ -261,13 +273,18 @@ nnoremap <Leader>ws :action ActivateStructureToolWindow<CR>
 nnoremap <Leader>wc :action ActivateCommitToolWindow<CR>
 nnoremap <Leader>wv :action ActivateVersionControlToolWindow<CR>
 let g:WhichKeyDesc_windows_database= "<Leader>wa Database Window"
-let g:WhichKeyDesc_windows_build = "<Leader>wb Build Tool"
 let g:WhichKeyDesc_windows_project = "<Leader>wp Project Window"
 let g:WhichKeyDesc_windows_debug = "<Leader>wd Debug Window"
 let g:WhichKeyDesc_windows_run = "<Leader>we Run Window"
 let g:WhichKeyDesc_windows_structure = "<Leader>ws Structure Window"
 let g:WhichKeyDesc_windows_commit = "<Leader>wc Commit Window"
 let g:WhichKeyDesc_windows_version_control = "<Leader>wv Version Control Window"
+
+if &ide =~? 'intellij idea'
+    nnoremap <Leader>wb :action ActivateBuildToolWindow<CR>
+
+    let g:WhichKeyDesc_windows_build = "<Leader>wb Build Tool"
+endif
 
 """ Running and Debugging
 
