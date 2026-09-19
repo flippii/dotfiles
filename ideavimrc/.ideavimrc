@@ -205,10 +205,8 @@ nnoremap <Leader>sp :action FindInPath<CR>
 let g:WhichKeyDesc_search = "<Leader>s Search"
 let g:WhichKeyDesc_search_in_path = "<Leader>sp Find in Path"
 
-nnoremap <Leader>R :action GotoRelated<CR>
 nnoremap <Leader>y :action CallHierarchy<CR>
 nnoremap <Leader>U :action FindUsages<CR>
-let g:WhichKeyDesc_goto_related = "<Leader>R Goto Related"
 let g:WhichKeyDesc_call_hierarchy = "<Leader>y Call Hierarchy"
 let g:WhichKeyDesc_find_usages = "<Leader>U Find Usages"
 
@@ -221,6 +219,7 @@ nnoremap <Leader>gt :action GotoTest<CR>
 nnoremap <Leader>gm :action GotoSuperMethod<CR>
 nnoremap <Leader>gs :action GotoSymbol<CR>
 nnoremap <Leader>ga :action GotoAction<CR>
+nnoremap <Leader>gr :action GotoRelated<CR>
 let g:WhichKeyDesc_goto_class = "<Leader>gc Goto Class"
 let g:WhichKeyDesc_goto_declaration = "<Leader>gd Goto Declaration"
 let g:WhichKeyDesc_goto_file = "<Leader>gf Goto File"
@@ -230,6 +229,7 @@ let g:WhichKeyDesc_goto_test = "<Leader>gt Goto Test"
 let g:WhichKeyDesc_goto_super_method = "<Leader>gm Goto Super-Method"
 let g:WhichKeyDesc_goto_symbol = "<Leader>gs Goto Symbol"
 let g:WhichKeyDesc_goto_actions = "<Leader>ga Goto Actions"
+let g:WhichKeyDesc_goto_related = "<Leader>gr Goto Related"
 
 nnoremap <Leader>cu :action ShowUsages<CR>
 nnoremap <leader>cU :action ShowUmlDiagram<CR>
