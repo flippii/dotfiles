@@ -141,11 +141,17 @@ vnoremap > >gv
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
 
-nnoremap <C-j> :action MoveLineUp<CR>
-nnoremap <C-k> :action MoveLineDown<CR>
+sethandler <A-Up> a:vim
+sethandler <A-Down> a:vim
 
-nnoremap <C-S-j> :action MoveStatementDown<CR>
-nnoremap <C-S-k> :action MoveStatementUp<CR>
+nnoremap <A-Up> :action MoveLineUp<CR>
+nnoremap <A-Down> :action MoveLineDown<CR>
+
+sethandler <C-A-Up> a:vim
+sethandler <C-A-Down> a:vim
+
+nnoremap <C-A-Up> :action MoveStatementUp<CR>
+nnoremap <C-A-Down> :action MoveStatementDown<CR>
 
 nnoremap zc :action CollapseRegion<CR>
 nnoremap zo :action ExpandRegion<CR>
